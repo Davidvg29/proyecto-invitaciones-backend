@@ -1,9 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const { Invitacion } = require("../db"); // Ajusta la ruta según la estructura de tu proyecto
+const { Invitacion } = require("../db");
 
 const getInvitacion = async (req, res) => {
-    const { invitacion } = req.query; // Usa req.query para obtener parámetros de consulta
+    const { invitacion } = req.query; 
 
     try {
         const invitacionData = await Invitacion.findOne({ where: { user: invitacion } });
@@ -24,6 +24,7 @@ const getInvitacion = async (req, res) => {
                     }
                 });
             });
+
         } else {
             res.status(404).json({ error: 'Invitación no encontrada' });
         }
