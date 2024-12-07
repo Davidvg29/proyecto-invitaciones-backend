@@ -3,6 +3,7 @@ const path = require("path");
 const { Invitacion } = require("../db");
 
 const getInvitacion = async (req, res) => {
+    
     const { invitacion } = req.query; 
 
     try {
