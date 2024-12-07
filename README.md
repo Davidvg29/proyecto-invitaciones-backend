@@ -4,14 +4,14 @@
 
 -Los archivos html contendrá: 	
     
-    lógica y estilo,
+	lógica y estilo,
 	Formulario para confirmar asistencia
 
 -Sección donde ingresar con clave y ver dasboard de cada invitación con personas que confirmaron asistencia
 
 -parte administracion se podra:
 	
-    -iniciar sesion con usuario y contraseña
+    	-iniciar sesion con usuario y contraseña
 	-(al momento de iniciar sesion, enviara un correo con codigo de acceso para autenticacion doble factor)
 	-generar invitacion
 	-eliminar invitacion
@@ -37,11 +37,15 @@ user stories:
 		-generar invitacion
 		-eliminar invitacion
 		-modificar invitacion
+  
 	cliente:
 		-modificar invitado
 		-agregar invitado
 		-eliminar invitado
+  		-generar link de invitacion para whatsapp
+    		-generar pdf para recuerdo de invitacion
+      
 	invitado(visualiza invitacion):
 		-ver informacion completa del evento(invitacion)
 		-confirmar asistencia por formulario
-
+		-generar pdf para recuerdo de invitacion
