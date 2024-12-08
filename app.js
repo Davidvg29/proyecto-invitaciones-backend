@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const express = require("express")
 const routes = require("./routes/routes")
 const morgan = require("morgan")
@@ -12,9 +14,9 @@ server.use(morgan("dev"))
 server.use(cors())
 server.use(routes)
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 
-db.sync({force:false})
+db.sync({force:true})
 .then(()=>{
     server.listen(PORT, ()=>{
         console.log(`Server listening on port: ${PORT}`)

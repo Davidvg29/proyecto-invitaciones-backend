@@ -1,13 +1,9 @@
 const Router = require("express")
 
-const postInvitacion = require("../controllers/postInvitacion")
-const getInvitacion = require("../controllers/getInvitacion")
-const getAllInvitacions = require("../controllers/getAllInvitacions")
+// const postInvitacion = require("../controllers/postInvitacion")
 
 const router = Router()
 
-router.post("/createInvitacion", postInvitacion)
-router.get("/getInvitacion", getInvitacion)
-router.get("/getAllInvitacions", getAllInvitacions)
+// router.post("/createInvitacion", postInvitacion)
 
 module.exports = router
