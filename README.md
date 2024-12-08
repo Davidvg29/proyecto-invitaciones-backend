@@ -25,9 +25,11 @@
 
 Base de datos:
 
-	usuarioAdministracion: usuario, contraseña
-	Invitaciones: id, cliente, invitación(código html)
-	Cliente: id, usuarioCliente, planInvitacion, cantidadConfirmados, confirmados
+	administrator: id_administrator, user_administrator, password
+	invitation: id_client, id_plan, name_invitation, creation_date
+	client: id_client, user_client, password, phone_number
+	plan: id_plan, name_plan, price
+	confirmation: id_cofirmation, id_invitation, name, phone_number, attendance, attendance_date
 
 user stories:
 
