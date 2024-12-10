@@ -21,7 +21,8 @@ module.exports = (sequelize) => {
             allowNull: false
         },
         phone_number_client: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING(50),
+            allowNull: false
         }
     },
     {
