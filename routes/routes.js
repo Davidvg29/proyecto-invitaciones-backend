@@ -5,11 +5,16 @@ const updatePlan = require("../controllers/plan_controllers/updatePlan")
 const getAllPlan = require("../controllers/plan_controllers/getAllPlan")
 const deletePlan = require("../controllers/plan_controllers/deletePlan")
 
-const router = Router()
+const getAllClient = require("../controllers/client_controllers/getAllClient")
 
+const router = Router()
+// ------plan-----
 router.post("/plan", createPlan)
 router.put("/plan/:id", updatePlan)
 router.get("/plan", getAllPlan)
 router.delete("/plan/:id", deletePlan)
+
+// -----client-----
+router.get("/client", getAllClient)
 
 module.exports = router
