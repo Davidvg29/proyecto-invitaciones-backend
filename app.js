@@ -16,7 +16,7 @@ server.use(routes)
 
 const PORT = process.env.PORT || 3001
 
-db.sync({force:true})
+db.sync({force:false, alter:true})
 .then(()=>{
     server.listen(PORT, ()=>{
         console.log(`Server listening on port: ${PORT}`)

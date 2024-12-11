@@ -43,6 +43,8 @@ models.Plan.belongsTo(models.Invitation, { foreignKey: "id_plan" })
 models.Invitation.hasMany(models.Confirmation, { foreignKey: "id_invitation" })
 models.Confirmation.belongsTo(models.Invitation, { foreignKey: "id_invitation" })
 
+console.log(sequelize.models)
+
 module.exports = {
     ...sequelize.models, 
     db: sequelize,     

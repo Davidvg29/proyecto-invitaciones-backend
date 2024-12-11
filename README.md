@@ -39,7 +39,8 @@ user stories:
 		-generar invitacion
 		-eliminar invitacion
 		-modificar invitacion
-  
+		-agregar clientes
+		
 	cliente:
 		-modificar invitado
 		-agregar invitado
