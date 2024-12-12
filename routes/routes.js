@@ -6,6 +6,7 @@ const getAllPlan = require("../controllers/plan_controllers/getAllPlan")
 const deletePlan = require("../controllers/plan_controllers/deletePlan")
 
 const getAllClient = require("../controllers/client_controllers/getAllClient")
+const createClient = require("../controllers/client_controllers/createClient")
 
 const router = Router()
 // ------plan-----
@@ -16,5 +17,6 @@ router.delete("/plan/:id", deletePlan)
 
 // -----client-----
 router.get("/client", getAllClient)
+router.post("/client", createClient)
 
 module.exports = router
