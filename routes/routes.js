@@ -9,6 +9,7 @@ const getAllClient = require("../controllers/client_controllers/getAllClient")
 const createClient = require("../controllers/client_controllers/createClient")
 const updateClient = require("../controllers/client_controllers/updateClient")
 const deleteClient = require("../controllers/client_controllers/deleteClient")
+const getAllInvitation = require("../controllers/invitation_controllers/getAllInvitations")
 
 const router = Router()
 
@@ -23,5 +24,8 @@ router.get("/client", getAllClient)
 router.post("/client", createClient)
 router.put("/client/:id", updateClient)
 router.delete("/client/:id", deleteClient)
+
+//------invitation------
+router.get("/invitation", getAllInvitation)
 
 module.exports = router
