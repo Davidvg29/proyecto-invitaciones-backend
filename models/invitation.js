@@ -31,7 +31,10 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING(50),
             allowNull: false
         },
-
+        codeHtml: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        }
     },
     {
         tableName: "invitation"

@@ -24,7 +24,7 @@ const createInvitation = async (req, res) => {
 
         const [invitationFind, created] = await invitation.findOrCreate({
             where: { name_invitation },
-            defaults: { id_client, id_plan, name_invitation },
+            defaults: { id_client, id_plan, name_invitation, codeHtml },
         });
 
         if (created) {

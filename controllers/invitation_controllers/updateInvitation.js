@@ -1,11 +1,13 @@
 const {invitation, client, plan} = require("../../db")
 const validationCreateInvitation = require("./validation/validationCreateInvitation")
+const fs = require("fs").promises;
+const path = require("path");
 
 const updateInvitation = async(req, res)=>{
     const {id} = req.params
-    const {id_client, id_plan, name_invitation} = req.body
+    const {id_client, id_plan, name_invitation, codeHtml} = req.body
     try {
-        const validation = validationCreateInvitation(id_client, id_plan, name_invitation)
+        const validation = validationCreateInvitation(id_client, id_plan, name_invitation, codeHtml)
         if(validation !== false){
             res.status(200).json({validation})
         }
@@ -27,16 +29,29 @@ const updateInvitation = async(req, res)=>{
         const updateInvitation = await invitation.update({
             id_client: id_client,
             id_plan: id_plan,
-            name_invitation: name_invitation
+            name_invitation: name_invitation,
+            codeHtml: codeHtml
         },{
             where: {id_invitation: id}, returning: true
         })
         const [updatedCount, updatedRows] = updateInvitation;
         if (updatedCount > 0) {
-            return res.status(200).json({
-                message: "Invitacion actualizada con éxito",
-                plan: updatedRows[0]  // Devolver la invitacion actualizado
-            });
+            try {
+                const dirPath = path.join(__dirname, "../../public/invitations");
+                const filePath = path.join(dirPath, `${name_invitation}.html`);
+                await fs.mkdir(dirPath, { recursive: true });
+                await fs.writeFile(filePath, codeHtml, "utf8");
+                return res.status(201).json({
+                    message: "Invitación actualizada con éxito",
+                    invitation: updatedRows[0], //devuelve invitacion actualizada
+                    file: `${name_invitation}.html`,
+                });
+            } catch (fileError) {
+                return res.status(500).json({
+                    message: "Invitación actualizada, pero no se pudo generar el archivo HTML",
+                    error: fileError.message,
+                });
+            }
         } else {
             return res.status(400).json({ message: "No se pudo actualizar la invitacion" });
         }
