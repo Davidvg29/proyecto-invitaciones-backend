@@ -31,7 +31,8 @@ module.exports = (sequelize) => {
         },
         attendance_date: {
             type: DataTypes.DATE,
-            allowNull: false
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
         }
     },
     {

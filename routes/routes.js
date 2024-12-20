@@ -15,6 +15,10 @@ const createInvitation = require("../controllers/invitation_controllers/createIn
 const updateInvitation = require("../controllers/invitation_controllers/updateInvitation")
 const getNameInvitation = require("../controllers/invitation_controllers/getNameInvitation")
 
+const getAllConfirmationByInvitationId = require("../controllers/confirmation_controllers/getAllConfirmationByInvitationId")
+const createConfirmation = require("../controllers/confirmation_controllers/createConfirmation")
+const deleteConfirmation = require("../controllers/confirmation_controllers/deleteConfirmation")
+
 const router = Router()
 
 // ------plan-----
@@ -34,5 +38,10 @@ router.get("/invitation", getAllInvitation)
 router.post("/invitation", createInvitation)
 router.put("/invitation/:id", updateInvitation)
 router.get("/invitation/:name", getNameInvitation)
+
+//------confirmation------
+router.get("/confirmation/:id", getAllConfirmationByInvitationId)
+router.post("/confirmation", createConfirmation)
+router.delete("/confirmation/:id", deleteConfirmation)
 
 module.exports = router

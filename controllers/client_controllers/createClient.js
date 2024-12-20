@@ -10,7 +10,7 @@ const createClient = async(req, res)=>{
            return res.status(400).json({validation})
         }
 
-        const [clientFind, created] = await client.findOrCreate(({
+        const [clientFind, created] = await client.findOrCreate({
             where: {user_client : user_client},
             defaults: {
                 user_client: user_client,
@@ -18,7 +18,7 @@ const createClient = async(req, res)=>{
                 name_client: name_client,
                 phone_number_client: phone_number_client
             }
-        }))
+        })
         if(created){
             res.status(201).json({
                 message: "Cliente creado exitosamente",
