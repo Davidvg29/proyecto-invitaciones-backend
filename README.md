@@ -1,5 +1,7 @@
 # proyecto-invitaciones-backend
 
+lo que tienen el ✔️ es porque estan listos
+
 -Generar archivos html, cuales serán las invitaciones
 
 -Los archivos html contendrá: 	
@@ -11,17 +13,17 @@
 
 -parte administracion se podra:
 	
-    	-iniciar sesion con usuario y contraseña
+    -iniciar sesion con usuario y contraseña
 	-(al momento de iniciar sesion, enviara un correo con codigo de acceso para autenticacion doble factor)
-	-generar invitacion
-	-eliminar invitacion
-	-modificar invitacion
+	-generar invitacion - ✔️
+	-eliminar invitacion - ✔️
+	-modificar invitacion - ✔️
 
 -seccion dashboard de cada cliente(invitacion):
 
-	-modificar invitados
-	-agregar invitados
-	-
+	-agregar invitados - listo
+	-eliminar invitados - ✔️
+	-ver invitados de una invitacion - ✔️
 
 Base de datos:
 
@@ -36,17 +38,16 @@ user stories:
 	administrador:	
 		-ingresar con usuario y contraseña
 		-recibir autenticacion para doble factor(en duda si va o no)
-		-generar invitacion
-		-eliminar invitacion
-		-modificar invitacion
-		-agregar clientes
+		-generar invitacion ✔️
+		-eliminar invitacion ✔️
+		-modificar invitacion ✔️
+		-agregar clientes ✔️
 		
 	cliente:
-		-modificar invitado
-		-agregar invitado
-		-eliminar invitado
+		-agregar invitado ✔️
+		-eliminar invitado ✔️
   		-generar link de invitacion para whatsapp
-    		-generar pdf para recuerdo de invitacion
+    	-generar pdf para recuerdo de invitacion
       
 	invitado(visualiza invitacion):
 		-ver informacion completa del evento(invitacion)
