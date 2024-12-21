@@ -18,6 +18,7 @@ const getNameInvitation = require("../controllers/invitation_controllers/getName
 const getAllConfirmationByInvitationId = require("../controllers/confirmation_controllers/getAllConfirmationByInvitationId")
 const createConfirmation = require("../controllers/confirmation_controllers/createConfirmation")
 const deleteConfirmation = require("../controllers/confirmation_controllers/deleteConfirmation")
+const createAdministrator = require("../controllers/administrator_controllers/createAdministrator")
 
 const router = Router()
 
@@ -43,5 +44,8 @@ router.get("/invitation/:name", getNameInvitation)
 router.get("/confirmation/:id", getAllConfirmationByInvitationId)
 router.post("/confirmation", createConfirmation)
 router.delete("/confirmation/:id", deleteConfirmation)
+
+//------administrator------
+router.post("/administrator", createAdministrator)
 
 module.exports = router

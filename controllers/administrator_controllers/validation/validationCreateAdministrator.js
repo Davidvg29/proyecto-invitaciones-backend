@@ -12,8 +12,8 @@ module.exports = validationCreateAdministrator = (user_administrator, password_a
     if(!uppercaseVerify.test(password_administrator)) error.password_administrator = "Contraseña debe tener al menos una letra mayuscula"
     if(!name_administrator || name_administrator.length < 3) error.name_administrator = "Nombre de administrador tiene que contener al menos 3 caracteres"
     if(!name_administrator || name_administrator.length > 20) error.name_administrator = "Nombre de administrador no puede contener mas de 20 caracteres"
-    if(!role_administrator || role_administrator.length < 3) error.role_administrator = "Roll de administrador tiene que contener al menos 3 caracteres"
-    if(!role_administrator || role_administrator.length > 20) error.role_administrator = "Roll de administrador no puede contener mas de 20 caracteres"
+    // if(!role_administrator || role_administrator.length < 3) error.role_administrator = "Roll de administrador tiene que contener al menos 3 caracteres"
+    if(role_administrator.length > 20) error.role_administrator = "Roll de administrador no puede contener mas de 20 caracteres"
 
     return Object.keys(error).length === 0 ? false : error
 }

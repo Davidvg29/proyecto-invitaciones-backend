@@ -1,4 +1,4 @@
-const bcrypt = requrie("bcrypt")
+const bcrypt = require("bcrypt")
 
 module.exports = encryption = async(myPlaintextPassword)=>{
     try {
