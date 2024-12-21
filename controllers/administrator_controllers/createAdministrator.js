@@ -10,6 +10,7 @@ const createAdministrator = async(req, res)=>{
             return res.status(400).json({validation})
         }
 
+        const role = role_administrator && role_administrator.trim() !== "" ? role_administrator : "root";
         const resultEncryption = await encryption(password_administrator)
         if(typeof resultEncryption === "string"){
             const [administratorFind, created] = await administrator.findOrCreate({
@@ -18,7 +19,7 @@ const createAdministrator = async(req, res)=>{
                     user_administrator: user_administrator,
                     password_administrator: resultEncryption,
                     name_administrator: name_administrator,
-                    role_administrator: role_administrator
+                    role_administrator: role
                 }
             })
             if(created){

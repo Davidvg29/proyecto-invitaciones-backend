@@ -22,7 +22,8 @@ module.exports = (sequelize) => {
         },
         role_administrator: {
             type: DataTypes.STRING(50),
-            defaultValue: "root"
+            defaultValue: "root",
+            allowNull: false
         }
     },
     {
