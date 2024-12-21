@@ -6,7 +6,7 @@ module.exports = encryption = async(myPlaintextPassword)=>{
         return hash
     } catch (error) {
         return {
-            message:"Erro al encriptar la contraseña",
+            message:"Error al encriptar la contraseña",
             error: error.message
         }
     }
