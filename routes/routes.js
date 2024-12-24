@@ -20,6 +20,7 @@ const createConfirmation = require("../controllers/confirmation_controllers/crea
 const deleteConfirmation = require("../controllers/confirmation_controllers/deleteConfirmation")
 const createAdministrator = require("../controllers/administrator_controllers/createAdministrator")
 const authAdministrator = require("../controllers/administrator_controllers/authAdministrator")
+const authClient = require("../controllers/client_controllers/authClient")
 
 const router = Router()
 
@@ -32,6 +33,7 @@ router.delete("/plan/:id", deletePlan)
 // -----client-----
 router.get("/client", getAllClient)
 router.post("/client", createClient)
+router.post("/client/auth", authClient)
 router.put("/client/:id", updateClient)
 router.delete("/client/:id", deleteClient)
 
