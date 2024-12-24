@@ -1,5 +1,6 @@
 const {client} = require("../../db")
 const validationCreateClient = require("./validation/validationCreateClient")
+const encryption = require("../../utils/crypto/encryption")
 
 const createClient = async(req, res)=>{
     const {user_client, password_client, name_client, phone_number_client} = req.body
@@ -10,25 +11,30 @@ const createClient = async(req, res)=>{
            return res.status(400).json({validation})
         }
 
-        const [clientFind, created] = await client.findOrCreate({
-            where: {user_client : user_client},
-            defaults: {
-                user_client: user_client,
-                password_client: password_client,
-                name_client: name_client,
-                phone_number_client: phone_number_client
+        const resultEncryption = await encryption(password_client)
+        if(typeof resultEncryption === "string"){
+            const [clientFind, created] = await client.findOrCreate({
+                where: {user_client : user_client},
+                defaults: {
+                    user_client: user_client,
+                    password_client: resultEncryption,
+                    name_client: name_client,
+                    phone_number_client: phone_number_client
+                }
+            })
+            if(created){
+                res.status(201).json({
+                    message: "Cliente creado exitosamente",
+                    client: clientFind.user_client
+                })
+            }else{
+                res.status(200).json({
+                    message: "El usuario ya existe",
+                    client: clientFind.user_client
+                })
             }
-        })
-        if(created){
-            res.status(201).json({
-                message: "Cliente creado exitosamente",
-                client: clientFind.user_client
-            })
-        }else{
-            res.status(200).json({
-                message: "El usuario ya existe",
-                client: clientFind.user_client
-            })
+        }else if(resultEncryption.error){
+            return res.status(400).json({resultEncryption})
         }
 
     } catch (error) {
