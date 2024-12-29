@@ -11,6 +11,7 @@ const updateClient = require("../controllers/client_controllers/updateClient")
 const deleteClient = require("../controllers/client_controllers/deleteClient")
 
 const getAllInvitation = require("../controllers/invitation_controllers/getAllInvitations")
+const getAllFilesInvitations = require("../controllers/invitation_controllers/getAllFilesInvitations")
 const createInvitation = require("../controllers/invitation_controllers/createInvitation")
 const updateInvitation = require("../controllers/invitation_controllers/updateInvitation")
 const getNameInvitation = require("../controllers/invitation_controllers/getNameInvitation")
@@ -42,6 +43,7 @@ router.get("/invitation", getAllInvitation)
 router.post("/invitation", createInvitation)
 router.put("/invitation/:id", updateInvitation)
 router.get("/invitation/:name", getNameInvitation)
+router.get("/invitations/files", getAllFilesInvitations)
 
 //------confirmation------
 router.get("/confirmation/:id", getAllConfirmationByInvitationId)

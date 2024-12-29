@@ -14,6 +14,7 @@ const getNameInvitation = async(req, res)=>{
             const filePath = path.join(__dirname, "../../public/invitations", `${name}.html`);
             try {
                 await fs.access(filePath)
+                res.setHeader("Content-Type", "text/html");
                 res.status(200).sendFile(filePath)
             } catch (fileError) {
                 res.status(404).json({
