@@ -7,7 +7,7 @@ const authClient = async(req,res)=>{
     try {
         const validation = validationAuthClient(user_client, password_client)
         if(validation !== false){
-            return res.status(400).json({
+            return res.status(200).json({
                 success: false,
                 message: "Usuario o contraseña incorrectos"
             })
@@ -17,7 +17,7 @@ const authClient = async(req,res)=>{
             where: {user_client}
         })
         if(!user){
-            return res.status(401).json({
+            return res.status(200).json({
                 success: false,
                 message: "Usuario o contraseña incorrectos"
             })
@@ -25,7 +25,7 @@ const authClient = async(req,res)=>{
 
         const isPasswordValid = await decryption(password_client, user.password_client)
         if(!isPasswordValid){
-            return res.status(401).json({
+            return res.status(200).json({
                 success: false,
                 message: "Usuario o contraseña incorrectos"
             })
