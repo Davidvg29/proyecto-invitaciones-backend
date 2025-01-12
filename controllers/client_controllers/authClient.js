@@ -1,4 +1,4 @@
-const {client} = require("../../db")
+const {client, invitation} = require("../../db")
 const decryption = require("../../utils/crypto/decryption")
 const validationAuthClient = require("./validation/validationAuthClient")
 
@@ -14,7 +14,10 @@ const authClient = async(req,res)=>{
         }
 
         const user = await client.findOne({
-            where: {user_client}
+            where: {user_client: user_client},
+            include:{
+                model: invitation
+            }
         })
         if(!user){
             return res.status(200).json({
@@ -39,7 +42,12 @@ const authClient = async(req,res)=>{
                 name_client: user.name_client,
                 phone_number_client: user.phone_number_client,
                 createdAt: user.createdAt,
-                updatedAt: user.updatedAt
+                updatedAt: user.updatedAt,
+                invitations: user.invitations.map((invitation) => ({
+                    id_invitation: invitation.id_invitation,
+                    name_invitation: invitation.name_invitation,
+                    createdAt: invitation.createdAt,
+                  })),
             }
         })
     } catch (error) {
