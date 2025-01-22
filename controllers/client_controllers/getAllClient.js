@@ -1,4 +1,4 @@
-const {client} = require("../../db")
+const {client, invitation, confirmation} = require("../../db")
 
 const getAllClient = async(req, res)=>{
     try {
@@ -10,7 +10,17 @@ const getAllClient = async(req, res)=>{
                  "phone_number_client",
                  "createdAt",
                  "updatedAt"
-            ]
+            ],
+            include: [{
+                model: invitation,
+                attributes: [
+                    "id_invitation",
+                    "name_invitation"
+                ],
+                include:[{
+                    model: confirmation
+                }]
+            }]
         })
         res.status(200).json({clients})
     } catch (error) {
