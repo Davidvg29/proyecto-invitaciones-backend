@@ -1,4 +1,4 @@
-const { client, invitation, confirmation } = require("../../db");
+const { client, invitation, confirmation, plan } = require("../../db");
 
 const getByClientId = async (req, res) => {
   const { id } = req.params;
@@ -20,6 +20,11 @@ const getByClientId = async (req, res) => {
               model: confirmation,
             },
           ],
+          include: [
+            {
+              model:plan
+            }
+          ]
         },
       ],
     });
