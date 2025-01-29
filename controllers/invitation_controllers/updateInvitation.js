@@ -9,7 +9,7 @@ const updateInvitation = async(req, res)=>{
     try {
         const validation = validationCreateInvitation(id_client, id_plan, name_invitation, codeHtml)
         if(validation !== false){
-            res.status(200).json({validation})
+            return res.status(200).json({validation})
         }
 
         const clientExists = await client.findByPk(id_client)
@@ -56,7 +56,7 @@ const updateInvitation = async(req, res)=>{
             return res.status(400).json({ message: "No se pudo actualizar la invitacion" });
         }
     } catch (error) {
-        res.status(500).json({
+        return res.status(500).json({
             message: "Error al actualizar invitacion",
             error: error.message
         })
