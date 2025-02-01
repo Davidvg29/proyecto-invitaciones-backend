@@ -6,10 +6,10 @@ const authAdministrator = async(req, res)=>{
     const {user_administrator, password_administrator} = req.body
 
     try {
-        const validate = validationAuthAdministrator(user_administrator, password_administrator)
-        if(validate !== false){
-            return res.status(400).json({validate})
-        }
+        // const validate = validationAuthAdministrator(user_administrator, password_administrator)
+        // if(validate !== false){
+        //     return res.status(400).json({validate})
+        // }
 
         const user = await administrator.findOne({
             where: {user_administrator}
