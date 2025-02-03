@@ -4,7 +4,7 @@ const getAllFilesInvitations = async(req, res)=>{
     try {
         const allInvitations = await invitation.findAll()
         if(allInvitations.length === 0){
-            res.status(404).json({
+            return res.status(404).json({
                 message: "No se encontraron archivos de invitaciones"
             })
         }
