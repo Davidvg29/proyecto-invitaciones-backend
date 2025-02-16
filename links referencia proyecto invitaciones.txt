@@ -5,3 +5,9 @@ https://kroma.com.ar/evnt/index-mobile.php Maqueta panel login gestion invitados
  https://kroma.com.ar/evnt/login.html Maqueta panel gestion invitados 
 https://kroma.com.ar/evnt/panel.html Carlos Aráoz 13:27 Servidor 
 https://www.wnpower.com/hosting-cloud-vps/
+
+
+ejemplos
+clasica: https://evnt.ar/clasica/
+platino: https://evnt.ar/Platino/
+gold: https://evnt.ar/boda/
