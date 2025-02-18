@@ -223,26 +223,16 @@ footer a{
      flex-direction: column;
      justify-content: center;
      align-items: center;
+     opacity: 1;
 }
 .container-modal::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(135, 135, 135, 0.3); 
-    /* backdrop-filter: blur(5px); */
-    /* z-index: -1; */
+    background-color: rgba(135, 135, 135, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: -1;
 }
-
-@keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-100px); /* Empuja el modal hacia arriba */
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0); /* Vuelve a su posición original */
-    }
-  }
 .modal{ 
     background-color: white;
     color: var(--color-primario);
@@ -257,8 +247,18 @@ footer a{
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    animation: fadeIn 0.5s forwards;
+    /* animation: fadeIn 0.5s forwards; */
 }
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px); /* Empuja el modal hacia arriba */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Vuelve a su posición original */
+    }
+  }
 form{ 
     background-color: white;
     color: var(--color-primario);

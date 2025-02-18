@@ -72,10 +72,54 @@
             }, 1500);
         }
         loader()
-        function sendData(){
-            console.log("form enviado")
-            const attendance = document.querySelector('input[name="attendance"]:checked').value;
-            console.log(attendance)
+        async function sendData(e){
+            e.preventDefault()
+            const error = document.querySelector(".error")
+            let errors = []
+            let data = {
+                id_invitation: "1", 
+                attendance: document.querySelector('input[name="attendance"]:checked')?.value  || "",
+                name_confirmation: document.querySelector("#name_confirmation")?.value || "", 
+                phone_number_confirmation: document.querySelector("#phone_number_confirmation")?.value || "", 
+            }
+            if (data.attendance === "true") {
+                data.attendance = true;
+            } else if (data.attendance === "false") {
+                data.attendance = false;
+            } else {
+                data.attendance = null; // Si no es "true" ni "false", asignamos null o podrías lanzar un error
+            }
+            
+            if(data.attendance === null) errors.push("Por favor, Indica si asistes o no.")
+            if(!data.name_confirmation || data.name_confirmation.length < 3) errors.push("Complete con un nombre válido.")
+            
+            if (errors.length > 0) {
+                error.innerHTML = errors.join("<br>");
+                return;
+            }else error.innerHTML = ""
+            
+            try {
+                console.log(data)
+                const response = await fetch("http://localhost:3001/confirmation", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+                const dataReponse = await response.json()
+                console.log(dataReponse)
+                if(dataReponse.validation){
+                    for (const key in dataReponse.validation) {
+                        if(dataReponse.validation.hasOwnProperty(key)){
+                            const errorMessage = dataReponse.validation[key]
+                            error.innerHTML += `${errorMessage}<br>`
+                        }
+                    }
+                }else{
+                    error.innerHTML = dataReponse.message
+                }
+            } catch (error) {
+                error.innerHTML = `Ocurrió un error al enviar la confirmación. Inténtelo de nuevo.`
+            }
         }
         function openModal(){
             const modalOverflow = document.querySelector(".modal-overflow")
@@ -99,17 +143,17 @@
                     <div class="container-nombre">
                         <label for="">
                             <p>Nombre y apellido:</p>
-                            <input type="text" required name="name_confirmation" id="">
+                            <input type="text" required name="name_confirmation" id="name_confirmation">
                         </label>
                     </div>
                     <div class="container-telefono">
                         <label for="">
                             <p>Teléfono:</p>
-                            <input type="number" required name="phone_number_confirmation" id="">
+                            <input type="number" name="phone_number_confirmation" id="phone_number_confirmation">
                         </label>
                     </div>
                     <div class="container-button">
-                        <button onclick="sendData()">Confirmar</button>
+                        <button onclick="sendData(event)">Confirmar</button>
                     </div>
                 </form>
                 <div class="error"></div>
