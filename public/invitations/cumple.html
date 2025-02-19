@@ -1,1 +1,680 @@
-<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1.0'><title>Invitación de Cumpleaños</title><style>body{font-family:'Comic Sans MS',cursive,sans-serif;background:linear-gradient(135deg,#ff9a9e,#fad0c4);display:flex;justify-content:center;height:100vh;margin:0;}.card{background-color:#fff;border-radius:15px;box-shadow:0 8px 16px rgba(0,0,0,0.2);padding:30px;max-width:350px;text-align:center;border:5px solid #ff6f61;}.card h1{font-size:32px;color:#ff6f61;margin-bottom:15px;}.card p{font-size:18px;color:#555;margin:10px 0;}.card .details{margin-top:20px;font-size:16px;color:#777;}.card .details p{margin:8px 0;}.card .button{display:inline-block;margin-top:25px;padding:12px 24px;background-color:#ff6f61;color:#fff;text-decoration:none;border-radius:25px;font-size:18px;transition:background-color 0.3s ease;}.card .button:hover{background-color:#ff3b2f;}.card .confetti{position:absolute;width:10px;height:10px;background-color:#ffcc00;border-radius:50%;animation:confetti 2s infinite;}@keyframes confetti{0%{transform:translateY(0) rotate(0);}100%{transform:translateY(500px) rotate(360deg);}}</style></head><body><div class='card'><h1>¡Celebra mi Cumpleaños!</h1><p>¡No te lo puedes perder!</p><div class='details'><p><strong>Fecha:</strong>15 de Noviembre,2023</p><p><strong>Hora:</strong>6:00 PM</p><p><strong>Lugar:</strong>Casa de Fiesta 'El Jardín Feliz'</p><p><strong>Dirección:</strong>Avenida de la Alegría 456,Ciudad Feliz</p></div><a href='#confirmar' class='button'>¡Confirmar Asistencia!</a></div><div class='confetti' style='top:10%;left:20%;'></div><div class='confetti' style='top:5%;left:50%;'></div><div class='confetti' style='top:15%;left:80%;'></div><div class='confetti' style='top:20%;left:40%;'></div><div class='confetti' style='top:25%;left:70%;'></div></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+    --color-primario: #1C2B3E;
+    --color-secundario: #00ff66;
+    --color-terciario: #ffffff;
+    --color-gradient: rgba(30, 65, 104, 0.600);
+    --fuente-principal: 'Arial', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%; /* Asegura que el body no crezca más allá de 100% */
+    background-color: var(--color-primario);
+    user-select: none;
+}
+.container-mayor{
+    width: 100%;
+    /* max-width: 100vw; */
+    display: flex;
+}
+.container-1{
+    width: 50%;
+    max-width: 50%;
+    height: 100vh;
+    /* background-color: red; */
+    background-image: 
+        linear-gradient(var(--color-gradient), var(--color-gradient)),
+        url(https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/jyg3ajxrfk8eugej3n4n);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+.container-2{
+    width: 50%;
+    max-width: 50%;
+    height: 100vh;
+    /* background-color: rgb(0, 255, 34); */
+    background-image: 
+        linear-gradient(var(--color-gradient), var(--color-gradient)),
+        url('https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/jfhlji7bbw1xcaac33ft');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container-title{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 1000;
+    position: absolute;
+}
+.title-1 {
+    padding-left: 20px;
+    /* background-color: rgb(226, 111, 111); */
+    width: 50%;
+    /* height: 100vh; */
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: transparent; /* Texto transparente */
+    -webkit-text-stroke: 2px var(--color-secundario); /* Borde verde */
+    text-shadow: 0px 0px 10px rgba(0, 255, 102, 0);
+    transform: rotate(180deg);
+}
+
+.title-2{
+    /* background-color: green; */
+    width: 50%;
+    max-width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    font-size: 120px;
+    text-transform: uppercase;
+    color: transparent; /* Texto transparente */
+    -webkit-text-stroke: 2px var(--color-terciario); /* Borde verde */
+    text-shadow: 0px 0px 10px rgba(0, 255, 102, 0);
+    line-height: 1;
+}
+.text-cumple{
+    font-size: 25px;
+    text-shadow: 0;
+    color: var(--color-secundario);
+    -webkit-text-stroke: 0px #00ff6600;
+    margin-top: 10px;
+}
+.container-info{
+    /* background-color: red; */
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+    /* background-color: red; */
+    background-image:url(https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/ojhimzucxziibyxlvypj);
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    /* height: 400px; */
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: var(--color-primario);
+    padding: 30px 10px 30px 10px;
+}
+.info-1{
+    width: 50%;
+    max-width: 50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.horario{
+    font-size: 60px;
+    font-weight: 1000;
+    margin: 10px 0 10px 0;
+}
+.direccion{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0 10px 0;
+}
+.descripcion{
+    font-size: 20px;
+    font-weight: 800;
+    margin: 10px 0 10px 0;
+}
+.container-confirmar{
+    margin: 10px 0 10px 0;
+}
+.container-confirmar button{
+    width: 200px;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-terciario);
+    font-size: 15px;
+    background-color: var(--color-primario);
+    border: none;
+    border-radius: 5px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.500);
+}
+.container-confirmar button:hover{
+    cursor: pointer;
+    background-color: var(--color-secundario);
+}
+.info-2{
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 0.9;
+}
+.numero{
+    font-size: 90px;
+    font-weight: 1000;
+}
+.mes{
+    font-size: 70px;
+
+    font-weight: 600;
+}
+.container-info2{
+    /* background-color: red; */
+    display: flex;
+    width: 100%;
+    height: 200px;
+    padding: 5px;
+}
+.vacio, .te-espero{
+    width: 50%;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+}
+.te-espero{
+    color: var(--color-secundario);
+    font-size: 60px;
+    font-family: "Corinthia", serif;
+    padding-left: 10%;
+    text-shadow: -0px 0px 10px var(--color-secundario);
+}
+footer{
+    background-color: rgb(40, 40, 40);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer a{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+    font-size: 12px;
+}
+
+/* modal */
+.container-modal {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(135, 135, 135, 0.208); */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    /* backdrop-filter: blur(5px); */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     opacity: 1;
+}
+.container-modal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(135, 135, 135, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+.modal{ 
+    background-color: white;
+    color: var(--color-primario);
+    width: 90%;
+    max-width: 800px;
+    /* height: 300px; */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    /* animation: fadeIn 0.5s forwards; */
+}
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px); /* Empuja el modal hacia arriba */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Vuelve a su posición original */
+    }
+  }
+form{ 
+    background-color: white;
+    color: var(--color-primario);
+    width: 90%;
+    max-width: 800px;
+    /* height: 300px; */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.close{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.close svg{
+    width: 30px;
+}
+.close svg:hover{
+    cursor: pointer;
+}
+.title-modal{
+    font-size: 25px;
+}
+.subtitle-modal{
+    font-size: 16px;
+    margin: 10px;
+}
+.inputs-radio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputs-radio label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 20px 20px ;
+}
+.inputs-radio input{
+    margin-right: 5px;
+}
+.container-nombre, .container-telefono {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container-nombre label, .container-telefono label{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 10px 0;
+    text-align: start;
+}
+.container-nombre input, .container-telefono input{
+    margin: 5px 0 5px 0;
+    border: 1px solid black;
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.container-nombre p, .container-telefono p{
+    width: 60%;
+    font-size: 15px;
+}
+/* Ocultar flechas en Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Ocultar flechas en Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.container-button{
+    width: 100%;
+    margin: 20px;
+}
+.container-button button{
+    background-color: var(--color-primario);
+    color: white;
+    width: 60%;
+    font-size: 15px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+.container-button button:hover{
+    background-color: var(--color-secundario);
+    cursor: pointer;
+}
+.footer-modal{
+    /* background-color: rgb(40, 40, 40); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.footer-modal a{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+    font-size: 12px;
+}
+/* fin modal */
+
+.error{
+    color: rgb(246, 97, 97);
+    /* background-color: green; */
+}
+
+.container-loader{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--color-primario);
+    top: 0;
+    right: 0;
+    z-index: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--color-secundario);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  
+@media screen and (max-width: 768px) {
+    .title-1{
+        padding-left: 10px;
+        font-size: 80px;
+    }
+    .title-2{
+        padding-left: 20px;
+        font-size: 100px;
+    }
+    .text-cumple{
+        font-size: 20px;
+    }
+    .container-info{
+    }
+    .info{
+        width: 100%;
+    }
+    .te-espero{
+        font-size: 50px;
+        padding-left: 0;
+    }
+}
+@media screen and (max-width: 425px) {
+    .title-1{
+        padding-left: 5px;
+        font-size: 70px;
+    }
+    .title-2{
+        padding-left: 15px;
+        font-size: 90px;
+    }
+    .text-cumple{
+        font-size: 15px;
+    }
+    .info{
+        /* flex-direction: column; */
+    }
+    .info-1{
+        width: 100%;
+    }
+    .info-2{
+        width: 100%;
+    }
+    .horario{
+        font-size: 40px;
+    }
+    .numero{
+        font-size: 60px;
+    }
+    .mes{
+        font-size: 50px;
+    }
+    .direccion{
+        font-size: 15px;
+    }
+    .descripcion{
+        font-size: 15px;
+    }
+    .container-confirmar button{
+        width: auto;
+        /* height:auto; */
+        padding: 5px 10px 5px 10px;
+        font-size: 12px;
+    }
+    .container-nombre input, .container-telefono input{
+        width: 100%;
+    }
+    .container-nombre p, .container-telefono p{
+        width: 100%;
+    }
+    .container-button button{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 320px) {
+    .title-1{
+        padding-left: 5px;
+        font-size: 20vw;
+    }
+    .title-2{
+        padding-left: 15px;
+        font-size: 25vw;
+    }
+    .text-cumple{
+        font-size:5vw;
+    }
+    .te-espero{
+        font-size: 35px;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="container-mayor">
+        <div class="container-1"></div>
+        <div class="container-2"></div>
+            <div class="container-title">
+                <div class="title-1">
+                    VEN A MI
+                </div>
+                <div class="title-2">
+                    <div>FI</div>
+                    <div>ES</div>
+                    <div>TA</div>
+                    <div class="text-cumple">DE CUMPLEAÑOS</div>
+                </div>
+            </div>
+        </div>
+        <div class="container-info">
+            <div class="info">
+                <div class="info-1">
+                    <div class="horario">22 HS</div>
+                    <div class="direccion">Calle cualquiera 123, cualquier lugar</div>
+                    <div class="descripcion">HABRÁ DJ Y TRAGOS</div>
+                    <div class="container-confirmar">
+                        <button class="confirmar" onclick="openModal()">Confirmar presencia</button>
+                    </div>
+                </div>
+                <div class="info-2">
+                    <div class="numero">24</div>
+                    <div class="mes">OCT</div>
+                </div>
+            </div>
+        </div>
+        <div class="container-info2">
+            <div class="vacio">
+                
+            </div>
+            <div class="te-espero">
+                ¡Te espero!
+            </div>
+        </div>
+        <footer>
+            <a href="">invitafacil.com.ar</a>
+        </footer>
+
+        <!-- modal -->
+        <div class="modal-overflow"></div>
+        <!-- fin modal -->
+         
+        <!-- loader -->
+        <!-- <div class="loader-wrapper">
+            <div class="container-loader">
+                <div class="loader"></div>
+            </div>
+        </div> -->
+        <!-- fin loader -->
+
+    <script>
+        // (function loader(){
+        //     const loaderWrapper = document.querySelector(".loader-wrapper")
+        //     setTimeout(() => {
+        //         loaderWrapper.innerHTML=""
+        //         // document.querySelector(".loader-wrapper").style.display = "none"
+        //     }, 1000);
+        // })()
+        
+        async function sendData(e){
+            e.preventDefault()
+            const error = document.querySelector(".error")
+            let errors = []
+            let data = {
+                id_invitation: "1", 
+                attendance: document.querySelector('input[name="attendance"]:checked')?.value  || "",
+                name_confirmation: document.querySelector("#name_confirmation")?.value || "", 
+                phone_number_confirmation: document.querySelector("#phone_number_confirmation")?.value || "", 
+            }
+            if (data.attendance === "true") {
+                data.attendance = true;
+            } else if (data.attendance === "false") {
+                data.attendance = false;
+            } else {
+                data.attendance = null; // Si no es "true" ni "false", asignamos null o podrías lanzar un error
+            }
+            
+            if(data.attendance === null) errors.push("Por favor, Indica si asistes o no.")
+            if(!data.name_confirmation || data.name_confirmation.length < 3) errors.push("Complete con un nombre válido.")
+            
+            if (errors.length > 0) {
+                error.innerHTML = errors.join("<br>");
+                return;
+            }else error.innerHTML = ""
+            
+            try {
+                console.log(data)
+                const response = await fetch("http://localhost:3001/confirmation", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+                const dataReponse = await response.json()
+                console.log(dataReponse)
+                if(dataReponse.validation){
+                    for (const key in dataReponse.validation) {
+                        if(dataReponse.validation.hasOwnProperty(key)){
+                            const errorMessage = dataReponse.validation[key]
+                            error.innerHTML += `${errorMessage}<br>`
+                        }
+                    }
+                }else{
+                    error.innerHTML = dataReponse.message
+                }
+            } catch (error) {
+                error.innerHTML = `Ocurrió un error al enviar la confirmación. Inténtelo de nuevo.`
+            }
+        }
+        function openModal(){
+            const modalOverflow = document.querySelector(".modal-overflow")
+            modalOverflow.innerHTML=`
+            <div class="container-modal">
+            <div class="modal">
+                <div class="close"><svg class="svgClose" onclick="closeModal()" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.0303 8.96967C9.73741 8.67678 9.26253 8.67678 8.96964 8.96967C8.67675 9.26256 8.67675 9.73744 8.96964 10.0303L10.9393 12L8.96966 13.9697C8.67677 14.2626 8.67677 14.7374 8.96966 15.0303C9.26255 15.3232 9.73743 15.3232 10.0303 15.0303L12 13.0607L13.9696 15.0303C14.2625 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2625 15.0303 13.9697L13.0606 12L15.0303 10.0303C15.3232 9.73746 15.3232 9.26258 15.0303 8.96969C14.7374 8.6768 14.2625 8.6768 13.9696 8.96969L12 10.9394L10.0303 8.96967Z" fill="#1C274C"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0574 1.25H11.9426C9.63424 1.24999 7.82519 1.24998 6.41371 1.43975C4.96897 1.63399 3.82895 2.03933 2.93414 2.93414C2.03933 3.82895 1.63399 4.96897 1.43975 6.41371C1.24998 7.82519 1.24999 9.63422 1.25 11.9426V12.0574C1.24999 14.3658 1.24998 16.1748 1.43975 17.5863C1.63399 19.031 2.03933 20.1711 2.93414 21.0659C3.82895 21.9607 4.96897 22.366 6.41371 22.5603C7.82519 22.75 9.63423 22.75 11.9426 22.75H12.0574C14.3658 22.75 16.1748 22.75 17.5863 22.5603C19.031 22.366 20.1711 21.9607 21.0659 21.0659C21.9607 20.1711 22.366 19.031 22.5603 17.5863C22.75 16.1748 22.75 14.3658 22.75 12.0574V11.9426C22.75 9.63423 22.75 7.82519 22.5603 6.41371C22.366 4.96897 21.9607 3.82895 21.0659 2.93414C20.1711 2.03933 19.031 1.63399 17.5863 1.43975C16.1748 1.24998 14.3658 1.24999 12.0574 1.25ZM3.9948 3.9948C4.56445 3.42514 5.33517 3.09825 6.61358 2.92637C7.91356 2.75159 9.62177 2.75 12 2.75C14.3782 2.75 16.0864 2.75159 17.3864 2.92637C18.6648 3.09825 19.4355 3.42514 20.0052 3.9948C20.5749 4.56445 20.9018 5.33517 21.0736 6.61358C21.2484 7.91356 21.25 9.62177 21.25 12C21.25 14.3782 21.2484 16.0864 21.0736 17.3864C20.9018 18.6648 20.5749 19.4355 20.0052 20.0052C19.4355 20.5749 18.6648 20.9018 17.3864 21.0736C16.0864 21.2484 14.3782 21.25 12 21.25C9.62177 21.25 7.91356 21.2484 6.61358 21.0736C5.33517 20.9018 4.56445 20.5749 3.9948 20.0052C3.42514 19.4355 3.09825 18.6648 2.92637 17.3864C2.75159 16.0864 2.75 14.3782 2.75 12C2.75 9.62177 2.75159 7.91356 2.92637 6.61358C3.09825 5.33517 3.42514 4.56445 3.9948 3.9948Z" fill="#1C274C"></path> </g></svg></div>
+                <div class="title-modal">Confirmación de asistencia</div>
+                <div class="subtitle-modal">Complete el formulario con sus datos</div>
+                <form action="">
+                    <div class="inputs-radio">
+                        <label>
+                            <input type="radio" required name="attendance" value="true">
+                            Asistiré
+                        </label>
+                        <label>
+                            <input type="radio" name="attendance" value="false">
+                            No asistiré
+                        </label>
+                    </div>
+                    <div class="container-nombre">
+                        <label for="">
+                            <p>Nombre y apellido:</p>
+                            <input type="text" required name="name_confirmation" id="name_confirmation">
+                        </label>
+                    </div>
+                    <div class="container-telefono">
+                        <label for="">
+                            <p>Teléfono:</p>
+                            <input type="number" name="phone_number_confirmation" id="phone_number_confirmation">
+                        </label>
+                    </div>
+                    <div class="container-button">
+                        <button onclick="sendData(event)">Confirmar</button>
+                    </div>
+                </form>
+                <div class="error"></div>
+                <div class="footer-modal">
+                    <a href="">invitafacil.com</a>
+                </div>
+            </div>
+        </div>`
+            document.body.style.overflow = "hidden";
+        }
+        function closeModal() {
+            const modalOverflow = document.querySelector(".modal-overflow");
+            if (modalOverflow) {
+                modalOverflow.innerHTML = ""; // Elimina el contenido del modal
+                document.body.style.overflow = "";
+            }
+        }
+        loader()
+    </script>
+</body>
+</html>
