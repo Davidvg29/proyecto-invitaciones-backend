@@ -559,21 +559,21 @@ input[type="number"] {
         <!-- fin modal -->
          
         <!-- loader -->
-        <!-- <div class="loader-wrapper">
+        <div class="loader-wrapper">
             <div class="container-loader">
                 <div class="loader"></div>
             </div>
-        </div> -->
+        </div>
         <!-- fin loader -->
 
     <script>
-        // (function loader(){
-        //     const loaderWrapper = document.querySelector(".loader-wrapper")
-        //     setTimeout(() => {
-        //         loaderWrapper.innerHTML=""
-        //         // document.querySelector(".loader-wrapper").style.display = "none"
-        //     }, 1000);
-        // })()
+        (function loader(){
+            const loaderWrapper = document.querySelector(".loader-wrapper")
+            setTimeout(() => {
+                loaderWrapper.innerHTML=""
+                // document.querySelector(".loader-wrapper").style.display = "none"
+            }, 1000);
+        })()
         
         async function sendData(e){
             e.preventDefault()
@@ -674,7 +674,6 @@ input[type="number"] {
                 document.body.style.overflow = "";
             }
         }
-        loader()
     </script>
 </body>
 </html>
