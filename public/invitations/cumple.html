@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ven a mi fiesta de cumpleaños</title>
 <style>
     :root {
     --color-primario: #1C2B3E;
@@ -529,7 +530,7 @@ input[type="number"] {
         <div class="container-info">
             <div class="info">
                 <div class="info-1">
-                    <div class="horario">22 HS</div>
+                    <div class="horario">00 HS</div>
                     <div class="direccion">Calle cualquiera 123, cualquier lugar</div>
                     <div class="descripcion">HABRÁ DJ Y TRAGOS</div>
                     <div class="container-confirmar">
@@ -557,7 +558,6 @@ input[type="number"] {
         <!-- modal -->
         <div class="modal-overflow"></div>
         <!-- fin modal -->
-         
         <!-- loader -->
         <div class="loader-wrapper">
             <div class="container-loader">
@@ -567,14 +567,13 @@ input[type="number"] {
         <!-- fin loader -->
 
     <script>
-        (function loader(){
-            const loaderWrapper = document.querySelector(".loader-wrapper")
+        function loader(){
             setTimeout(() => {
-                loaderWrapper.innerHTML=""
+                document.querySelector(".loader-wrapper").innerHTML=""
                 // document.querySelector(".loader-wrapper").style.display = "none"
             }, 1000);
-        })()
-        
+        }
+        // loader()
         async function sendData(e){
             e.preventDefault()
             const error = document.querySelector(".error")
@@ -674,6 +673,7 @@ input[type="number"] {
                 document.body.style.overflow = "";
             }
         }
+        loader()
     </script>
 </body>
 </html>
