@@ -579,7 +579,7 @@ input[type="number"] {
             const error = document.querySelector(".error")
             let errors = []
             let data = {
-                id_invitation: "1", 
+                id_invitation: "{{id_invitation}}", 
                 attendance: document.querySelector('input[name="attendance"]:checked')?.value  || "",
                 name_confirmation: document.querySelector("#name_confirmation")?.value || "", 
                 phone_number_confirmation: document.querySelector("#phone_number_confirmation")?.value || "", 
@@ -617,6 +617,7 @@ input[type="number"] {
                         }
                     }
                 }else{
+                    if(dataReponse.created) error.style.color = "var(--color-secundario)"
                     error.innerHTML = dataReponse.message
                 }
             } catch (error) {
