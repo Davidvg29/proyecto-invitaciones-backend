@@ -27,6 +27,7 @@ const createConfirmation = async(req, res)=>{
         })
         if(created){
             return res.status(200).json({
+                created: true,
                 message: "Confirmacion creada con exito",
                 confirmation: confirmationFind.name_confirmation,
                 attendance: confirmationFind.attendance
