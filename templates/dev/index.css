@@ -1,5 +1,8 @@
 :root {
-    
+    --color-primario: #F9F5EF;
+    --color-secundario: #DDC190;
+
+    --fuente-primaria: "Ephesis", serif;
 }
 
 *{
@@ -9,7 +12,7 @@
 }
 html, body {
     width: 100%; /* Asegura que el body no crezca más allá de 100% */
-    /* background-color: var(--color-primario); */
+    background-color: var(--color-primario);
     user-select: none;
 }
 
@@ -59,4 +62,25 @@ html, body {
     position: absolute;
     top: -15%;
     left: 0%;
+}
+.container-nombre{
+    background-color: var(--color-primario);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    /* align-items: center; */
+    font-size: 7vw;
+    color: var(--color-secundario);
+    font-family: var(--fuente-primaria);
+    line-height: .9;
+    padding: 60px;
+}
+.nombre1{
+    padding-left: 30%;
+    
+}
+.nombre2{
+    padding-left: 40%;
 }
