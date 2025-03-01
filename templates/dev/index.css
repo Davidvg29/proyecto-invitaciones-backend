@@ -263,6 +263,73 @@ footer a{
     font-size: 12px;
 }
 
+.container-confirmar{
+    background-color: var(--color-secundario);
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.container-confirmar svg{
+    width: 60px;
+    height: 60px;
+}
+.title-confirmar{
+    font-size: 30px;
+    color: var(--color-primario);
+    margin: 20px;
+}
+.subtitle-confirmar{
+    color: var(--color-primario);
+}
+.container-confirmar button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    margin: 20px;
+    border-radius: 100px;
+    background-color: white;
+    color: var(--color-terciario);
+    border: none;
+}
+.container-confirmar button:hover{
+    cursor: pointer;
+}
+.container-confirmar button svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.sonido{
+    background-color: var(--color-secundario);
+    /* width: 100px; */
+    /* height: 100px; */
+     padding: 10px;
+     border-radius: 100px;
+     border: 3px solid var(--color-primario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+}
+.sonido:hover{
+    cursor: pointer;
+}
+.sonido svg{
+    width: 30px;
+    height: 30px;
+}
+
 @media (min-width: 768px) {
     header {
         font-size: 50px;
