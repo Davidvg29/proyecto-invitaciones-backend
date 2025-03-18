@@ -115,5 +115,22 @@
     <footer>
         <a href="">invitafacil.com.ar</a>
     </footer>
+
+    <!-- loader -->
+    <div class="loader-wrapper">
+        <div class="container-loader">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <!-- fin loader -->
+    <script>
+        function loader(){
+            setTimeout(() => {
+                document.querySelector(".loader-wrapper").innerHTML=""
+                // document.body.insertAdjacentHTML("beforeend", htmlContent);
+            }, 1500);
+        }
+        loader()
+    </script>
 </body>
 </html>

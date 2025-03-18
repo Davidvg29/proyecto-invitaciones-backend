@@ -141,7 +141,7 @@ header {
     /* background-color: red; */
      /* border-top: 1px solid var(--color-terciario); */
     width: 100%;
-    padding: 100px 0 100px 0;
+    padding: 0px 0 100px 0;
 }
 .container-direcciones svg{
     width: 45px;
@@ -275,8 +275,8 @@ footer a{
     padding: 20px;
 }
 .container-confirmar svg{
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
 }
 .title-confirmar{
     font-size: 30px;
@@ -329,6 +329,57 @@ footer a{
     width: 30px;
     height: 30px;
 }
+/* .sonido::before, 
+.sonido::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    animation: sonar 1.5s infinite ease-out;
+}
+
+.sonido::after {
+    animation-delay: 0.5s;
+} */
+
+/* @keyframes sonar {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+} */
+
+.container-loader{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--color-primario);
+    top: 0;
+    right: 0;
+    z-index: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--color-secundario);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
 @media (min-width: 768px) {
     header {
@@ -404,5 +455,11 @@ footer a{
         object-fit: cover;
         margin: 5px;
         border-radius: 5px;
+    }
+    .subtitle-album{
+        font-size: 40px;
+    }
+    .title-confirmar{
+        font-size: 40px;
     }
 }
