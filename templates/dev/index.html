@@ -8,6 +8,653 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <title>Casamiento</title>
+    <style>
+        :root {
+    --color-primario: #F9F5EF;
+    --color-secundario: #DDC190;
+    --color-terciario: #868686;
+
+    --fuente-primaria: "Ephesis", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    background-color: var(--color-primario);
+    user-select: none;
+    padding-top: 30px; /* Asegura que el contenido no se solape con el header */
+}
+
+header {
+    background-color: var(--color-primario);
+    width: 100%;
+    height: auto;
+    min-width: 60px;
+    padding: 5px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: var(--color-secundario);
+    font-family: var(--fuente-primaria);
+    font-size: 40px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-img {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.div-img {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.div-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+}
+
+/* Degradado en la parte inferior de la imagen */
+.div-img::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    border-radius: 5px;
+}
+
+.div-text {
+    position: absolute;
+    width: 100%;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+}
+
+.text1 {
+    font-size: 40px;
+}
+
+.text2 {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.container-contador{
+    /* background-color: red; */
+    text-align: center;
+    margin: 130px 0 130px 0;
+}
+.cuando{
+    font-size: 14px;
+    color: var(--color-secundario);
+    margin: 10px;
+}
+.fecha{
+    font-size: 30px;
+    color: var(--color-terciario);
+    margin: 10px;
+}
+.contador{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.item{
+    margin: 10px;
+}
+.separador{
+    font-size: 18px;
+    color: var(--color-secundario);
+}
+.numero{
+    color: var(--color-secundario);
+    font-size: 30px;
+}
+.tiempo{
+    font-size: 12px;
+    color: var(--color-terciario);
+}
+
+.container-direcciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-terciario);
+    /* background-color: red; */
+     /* border-top: 1px solid var(--color-terciario); */
+    width: 100%;
+    padding: 0px 0 100px 0;
+}
+.container-direcciones svg{
+    width: 45px;
+    height: 45px;
+}
+.direccion{
+    margin: 40px;
+}
+.title-direccion{
+    font-size: 30px;
+    margin: 10px;
+}
+.direccion-horario{
+    font-size: 25px;
+    margin: 10px;
+    margin-bottom: 25px;
+}
+.container-direcciones a{
+    background-color: #eaeaea;
+    padding: 10px 20px 10px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: var(--color-terciario);
+    font-size: 14px;
+}
+.container-historia{
+    /* background-color: red; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 100px 0;
+}
+.historia-img{
+    /* background-color: green; */
+    /* width: 100%; */
+    /* height: 50%; */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.historia-img img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    padding: 10px;
+}
+.historia{
+    /* background-color: rgb(0, 9, 128); */
+    /* width: 100%; */
+    /* height: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.historia svg{
+    width: 60px;
+    height: 60px;
+    /* margin: 10px; */
+     margin: 20px;
+}
+.historia-title{
+    font-size: 30px;
+    margin: 20px 0 20px 0;
+    font-family: var(--fuente-primaria);
+    color: var(--color-terciario);
+}
+.historia-texto{
+    max-width: 500px;
+    line-height: 1.5;
+    color: var(--color-terciario);
+}
+
+.container-album{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.title-album{
+    font-size: 14px;
+    color: var(--color-secundario);
+}
+.subtitle-album{
+    font-size: 30px;
+    color: var(--color-terciario);
+}
+.container-img-album{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px 0 30px 0;
+    overflow: hidden;
+}
+.container-img-album img{
+    width: 40%;
+    height: 70vw;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+footer{
+    background-color: rgb(40, 40, 40);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer a{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.container-confirmar{
+    background-color: var(--color-secundario);
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.container-confirmar svg{
+    width: 70px;
+    height: 70px;
+}
+.title-confirmar{
+    font-size: 30px;
+    color: var(--color-primario);
+    margin: 20px;
+}
+.subtitle-confirmar{
+    color: var(--color-primario);
+}
+.container-confirmar button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    margin: 20px;
+    border-radius: 100px;
+    background-color: white;
+    color: var(--color-terciario);
+    border: none;
+}
+.container-confirmar button:hover{
+    cursor: pointer;
+}
+.container-confirmar button svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.sonido{
+    background-color: var(--color-secundario);
+    /* width: 100px; */
+    /* height: 100px; */
+     padding: 5px;
+     border-radius: 100px;
+     /* border: 3px solid var(--color-primario); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+}
+.sonido:hover{
+    cursor: pointer;
+}
+.sonido svg{
+    width: 30px;
+    height: 30px;
+}
+.sonido audio{
+    width: 150px;
+    height: 50px;
+    /* background-color: red; */
+}
+/* .sonido::before, 
+.sonido::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    animation: sonar 1.5s infinite ease-out;
+}
+
+.sonido::after {
+    animation-delay: 0.5s;
+} */
+
+/* @keyframes sonar {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+} */
+
+/* modal */
+.container-modal {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(135, 135, 135, 0.208); */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    /* backdrop-filter: blur(5px); */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     opacity: 1;
+}
+.container-modal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(135, 135, 135, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+.modal{ 
+    background-color: white;
+    color: var(--color-secundario);
+    width: 90%;
+    max-width: 800px;
+    /* height: 300px; */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    /* animation: fadeIn 0.5s forwards; */
+}
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px); /* Empuja el modal hacia arriba */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Vuelve a su posición original */
+    }
+  }
+form{ 
+    background-color: white;
+    color: var(--color-terciario);
+    width: 90%;
+    max-width: 800px;
+    /* height: 300px; */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.close{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.close svg{
+    width: 30px;
+}
+.close svg:hover{
+    cursor: pointer;
+}
+.title-modal{
+    font-size: 25px;
+}
+.subtitle-modal{
+    font-size: 16px;
+    margin: 10px;
+}
+.inputs-radio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputs-radio label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 20px 20px ;
+}
+.inputs-radio input{
+    margin-right: 5px;
+}
+.container-nombre, .container-telefono {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container-nombre label, .container-telefono label{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 10px 0;
+    text-align: start;
+}
+.container-nombre input, .container-telefono input{
+    margin: 5px 0 5px 0;
+    border: 1px solid var(--color-terciario);
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.container-nombre p, .container-telefono p{
+    width: 60%;
+    font-size: 15px;
+}
+/* Ocultar flechas en Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Ocultar flechas en Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.container-button{
+    width: 100%;
+    margin: 20px;
+}
+.container-button button{
+    background-color: var(--color-secundario);
+    color: white;
+    width: 60%;
+    font-size: 15px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+.container-button button:hover{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    cursor: pointer;
+}
+.footer-modal{
+    /* background-color: rgb(40, 40, 40); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.footer-modal a{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+    font-size: 12px;
+}
+.error{
+    color: rgb(246, 97, 97);
+    /* background-color: green; */
+}
+/* fin modal */
+
+.container-loader{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--color-primario);
+    top: 0;
+    right: 0;
+    z-index: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--color-secundario);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+@media (min-width: 768px) {
+    header {
+        font-size: 50px;
+        padding: 10px;
+    }
+
+    .text1 {
+        font-size: 70px;
+    }
+
+    .text2 {
+        font-size: 18px;
+    }
+    .cuando{
+        font-size: 16px;
+    }
+    .fecha{
+        font-size: 40px;
+    }
+    .numero{
+        color: var(--color-secundario);
+        font-size: 50px;
+    }
+    .tiempo{
+        font-size: 12px;
+        color: var(--color-terciario);
+    }
+    .item{
+        margin: 30px;
+    }
+    .container-direcciones{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .container-direcciones svg{
+        width: 70px;
+        height: 70px;
+    }
+    .direccion{
+        margin:40px 100px 40px 100px;
+    }
+    .title-direccion{
+        font-size: 40px;
+        /* margin: 10px; */
+    }
+    .direccion-horario{
+        font-size: 30px;
+        /* margin: 10px; */
+    }
+
+    .container-historia{
+        flex-direction: row;
+    }
+    .historia-img img{
+        width: 90%;
+        max-width: 600px;
+        height: 90%;
+        max-height: 600px;
+        object-fit: cover;
+        padding: 10px;
+    }
+    .historia svg{
+        width: 70px;
+        height: 70px;
+    }
+    .historia-title{
+        font-size: 40px;
+    }
+    .container-img-album img{
+        width: 23%;
+        height: 30vw;
+        object-fit: cover;
+        margin: 5px;
+        border-radius: 5px;
+    }
+    .subtitle-album{
+        font-size: 40px;
+    }
+    .title-confirmar{
+        font-size: 40px;
+    }
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -15,7 +662,7 @@
     </header>
     <div class="container-img">
         <div class="div-img">
-            <img src="./pareja1.jpg" alt="">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/f0tpdvjuaro02aikiuf2" alt="">
         </div>
         <div class="div-text">
             <p class="text1">¡Nos Casamos!</p>
@@ -103,18 +750,25 @@
         <svg version="1.1" id="CHECKLIST" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1800 1800" enable-background="new 0 0 1800 1800" xml:space="preserve" fill="#F9F5EF"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path fill="#F9F5EF" d="M1506.693,279.092h-150.36v-85.277c0-17.353-14.065-31.418-31.419-31.418h-227.317 C1078.205,70.574,996.5,2.304,900.003,2.304c-96.499,0-178.202,68.27-197.595,160.092H475.091 c-17.353,0-31.419,14.065-31.419,31.418v85.277H293.307c-17.353,0-31.419,14.066-31.419,31.419v1455.764 c0,17.353,14.066,31.419,31.419,31.419h1213.386c17.354,0,31.42-14.066,31.42-31.419V310.511 C1538.113,293.158,1524.047,279.092,1506.693,279.092z M506.511,225.234h223.28c16.617,0,30.354-12.935,31.362-29.517 c4.436-73.219,65.424-130.574,138.85-130.574c73.425,0,134.413,57.355,138.849,130.574c1.009,16.582,14.746,29.517,31.363,29.517 h223.28v53.858v62.838v74.81H506.511v-74.81v-62.838V225.234z M1475.274,1734.855H324.728V341.93h118.944v106.229 c0,17.354,14.066,31.419,31.419,31.419h849.823c17.354,0,31.419-14.066,31.419-31.419V341.93h118.941V1734.855z"></path> <path fill="#F9F5EF" d="M663.633,684.019L534.366,813.291l-57.803-57.806c-12.272-12.265-32.164-12.265-44.437,0 c-12.269,12.272-12.269,32.164,0,44.437l80.021,80.022c6.136,6.132,14.176,9.201,22.219,9.201c8.043,0,16.083-3.069,22.219-9.201 l151.486-151.486c12.269-12.273,12.269-32.165,0-44.438C695.799,671.755,675.907,671.755,663.633,684.019z"></path> <path fill="#F9F5EF" d="M824.996,750.563c-17.354,0-31.419,14.066-31.419,31.419c0,17.354,14.066,31.419,31.419,31.419h520.665 c17.354,0,31.419-14.066,31.419-31.419c0-17.353-14.065-31.419-31.419-31.419H824.996z"></path> <path fill="#F9F5EF" d="M663.633,1039.925l-129.267,129.272l-57.803-57.807c-12.272-12.265-32.164-12.265-44.437,0 c-12.269,12.272-12.269,32.164,0,44.438l80.021,80.021c6.136,6.133,14.176,9.2,22.219,9.2c8.043,0,16.083-3.067,22.219-9.2 l151.486-151.486c12.269-12.272,12.269-32.163,0-44.438C695.799,1027.66,675.907,1027.66,663.633,1039.925z"></path> <path fill="#F9F5EF" d="M1345.661,1106.467H824.996c-17.354,0-31.419,14.066-31.419,31.42s14.066,31.42,31.419,31.42h520.665 c17.354,0,31.419-14.066,31.419-31.42S1363.015,1106.467,1345.661,1106.467z"></path> <path fill="#F9F5EF" d="M663.633,1395.83l-129.267,129.272l-57.803-57.808c-12.272-12.264-32.164-12.264-44.437,0 c-12.269,12.274-12.269,32.166,0,44.439l80.021,80.021c6.136,6.132,14.176,9.199,22.219,9.199c8.043,0,16.083-3.067,22.219-9.199 l151.486-151.486c12.269-12.274,12.269-32.166,0-44.438C695.799,1383.566,675.907,1383.566,663.633,1395.83z"></path> <path fill="#F9F5EF" d="M1345.661,1462.373H824.996c-17.354,0-31.419,14.066-31.419,31.42s14.066,31.418,31.419,31.418h520.665 c17.354,0,31.419-14.064,31.419-31.418S1363.015,1462.373,1345.661,1462.373z"></path> </g> </g></svg>
         <p class="title-confirmar">Confirmacion de asistencia</p>
         <p class="subtitle-confirmar">Esperamos contar con tu presencia, no olvides confirmar</p>
-        <button>
+        <button class="confirmar" onclick="openModal()">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#DDC190" stroke-width="1.5"></circle> <path d="M8.5 12.5L10.5 14.5L15.5 9.5" stroke="#DDC190" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
             CONFIRMAR ASISTENCIA
         </button>
     </div>
     <div class="sonido">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 3.00001C14 1.07799 11.5532 0.262376 10.4 1.8L6.5 7H4C2.34315 7 1 8.34315 1 10V14C1 15.6569 2.34315 17 4 17H6.49356L10.3878 22.3049C11.5313 23.8627 14 23.0539 14 21.1214V3.00001ZM8.1 8.2L12 3V21.1214L8.10581 15.8165C7.72901 15.3032 7.13031 15 6.49356 15H4C3.44772 15 3 14.5523 3 14V10C3 9.44772 3.44772 9 4 9H6.5C7.12951 9 7.72229 8.70361 8.1 8.2Z" fill="#FFFFFF"></path> <path d="M21.2929 8.57094C21.6834 8.18041 22.3166 8.18042 22.7071 8.57094C23.0976 8.96146 23.0976 9.59463 22.7071 9.98515L20.7603 11.9319L22.7071 13.8787C23.0976 14.2692 23.0976 14.9024 22.7071 15.2929C22.3166 15.6834 21.6834 15.6834 21.2929 15.2929L19.3461 13.3461L17.3994 15.2929C17.0088 15.6834 16.3757 15.6834 15.9852 15.2929C15.5946 14.9023 15.5946 14.2692 15.9852 13.8787L17.9319 11.9319L15.9852 9.98517C15.5946 9.59464 15.5946 8.96148 15.9852 8.57096C16.3757 8.18043 17.0088 8.18043 17.3994 8.57096L19.3461 10.5177L21.2929 8.57094Z" fill="#FFFFFF"></path> </g></svg>
+        <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 3.00001C14 1.07799 11.5532 0.262376 10.4 1.8L6.5 7H4C2.34315 7 1 8.34315 1 10V14C1 15.6569 2.34315 17 4 17H6.49356L10.3878 22.3049C11.5313 23.8627 14 23.0539 14 21.1214V3.00001ZM8.1 8.2L12 3V21.1214L8.10581 15.8165C7.72901 15.3032 7.13031 15 6.49356 15H4C3.44772 15 3 14.5523 3 14V10C3 9.44772 3.44772 9 4 9H6.5C7.12951 9 7.72229 8.70361 8.1 8.2Z" fill="#FFFFFF"></path> <path d="M21.2929 8.57094C21.6834 8.18041 22.3166 8.18042 22.7071 8.57094C23.0976 8.96146 23.0976 9.59463 22.7071 9.98515L20.7603 11.9319L22.7071 13.8787C23.0976 14.2692 23.0976 14.9024 22.7071 15.2929C22.3166 15.6834 21.6834 15.6834 21.2929 15.2929L19.3461 13.3461L17.3994 15.2929C17.0088 15.6834 16.3757 15.6834 15.9852 15.2929C15.5946 14.9023 15.5946 14.2692 15.9852 13.8787L17.9319 11.9319L15.9852 9.98517C15.5946 9.59464 15.5946 8.96148 15.9852 8.57096C16.3757 8.18043 17.0088 8.18043 17.3994 8.57096L19.3461 10.5177L21.2929 8.57094Z" fill="#FFFFFF"></path> </g></svg> -->
+        <audio autoplay loop controls>
+            <source src="https://res.cloudinary.com/djkld6wmk/video/upload/f_auto:video,q_auto/v1/proyecto%20invitaciones/tbbldt777ec6mtnkqgje" type="">
+        </audio>
     </div>
     
     <footer>
         <a href="">invitafacil.com.ar</a>
     </footer>
+
+    <!-- modal -->
+    <div class="modal-overflow"></div>
+    <!-- fin modal -->
 
     <!-- loader -->
     <div class="loader-wrapper">
@@ -123,6 +777,7 @@
         </div>
     </div>
     <!-- fin loader -->
+    
     <script>
         function loader(){
             setTimeout(() => {
@@ -131,6 +786,109 @@
             }, 1500);
         }
         loader()
+
+        async function sendData(e){
+            e.preventDefault()
+            const error = document.querySelector(".error")
+            let errors = []
+            let data = {
+                id_invitation: "{{id_invitation}}", 
+                attendance: document.querySelector('input[name="attendance"]:checked')?.value  || "",
+                name_confirmation: document.querySelector("#name_confirmation")?.value || "", 
+                phone_number_confirmation: document.querySelector("#phone_number_confirmation")?.value || "", 
+            }
+            if (data.attendance === "true") {
+                data.attendance = true;
+            } else if (data.attendance === "false") {
+                data.attendance = false;
+            } else {
+                data.attendance = null; // Si no es "true" ni "false", asignamos null o podrías lanzar un error
+            }
+            
+            if(data.attendance === null) errors.push("Por favor, Indica si asistes o no.")
+            if(!data.name_confirmation || data.name_confirmation.length < 3) errors.push("Complete con un nombre válido.")
+            
+            if (errors.length > 0) {
+                error.innerHTML = errors.join("<br>");
+                return;
+            }else error.innerHTML = ""
+            
+            try {
+                console.log(data)
+                const response = await fetch("http://localhost:3001/confirmation", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+                const dataReponse = await response.json()
+                console.log(dataReponse)
+                if(dataReponse.validation){
+                    for (const key in dataReponse.validation) {
+                        if(dataReponse.validation.hasOwnProperty(key)){
+                            const errorMessage = dataReponse.validation[key]
+                            error.innerHTML += `${errorMessage}<br>`
+                        }
+                    }
+                }else{
+                    if(dataReponse.created) error.style.color = "var(--color-secundario)"
+                    error.innerHTML = dataReponse.message
+                }
+            } catch (error) {
+                error.innerHTML = `Ocurrió un error al enviar la confirmación. Inténtelo de nuevo.`
+            }
+        }
+        
+        function openModal(){
+            const modalOverflow = document.querySelector(".modal-overflow")
+            modalOverflow.innerHTML=`
+            <div class="container-modal">
+            <div class="modal">
+                <div class="close"><svg class="svgClose" onclick="closeModal()" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.0303 8.96967C9.73741 8.67678 9.26253 8.67678 8.96964 8.96967C8.67675 9.26256 8.67675 9.73744 8.96964 10.0303L10.9393 12L8.96966 13.9697C8.67677 14.2626 8.67677 14.7374 8.96966 15.0303C9.26255 15.3232 9.73743 15.3232 10.0303 15.0303L12 13.0607L13.9696 15.0303C14.2625 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2625 15.0303 13.9697L13.0606 12L15.0303 10.0303C15.3232 9.73746 15.3232 9.26258 15.0303 8.96969C14.7374 8.6768 14.2625 8.6768 13.9696 8.96969L12 10.9394L10.0303 8.96967Z" fill="#1C274C"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0574 1.25H11.9426C9.63424 1.24999 7.82519 1.24998 6.41371 1.43975C4.96897 1.63399 3.82895 2.03933 2.93414 2.93414C2.03933 3.82895 1.63399 4.96897 1.43975 6.41371C1.24998 7.82519 1.24999 9.63422 1.25 11.9426V12.0574C1.24999 14.3658 1.24998 16.1748 1.43975 17.5863C1.63399 19.031 2.03933 20.1711 2.93414 21.0659C3.82895 21.9607 4.96897 22.366 6.41371 22.5603C7.82519 22.75 9.63423 22.75 11.9426 22.75H12.0574C14.3658 22.75 16.1748 22.75 17.5863 22.5603C19.031 22.366 20.1711 21.9607 21.0659 21.0659C21.9607 20.1711 22.366 19.031 22.5603 17.5863C22.75 16.1748 22.75 14.3658 22.75 12.0574V11.9426C22.75 9.63423 22.75 7.82519 22.5603 6.41371C22.366 4.96897 21.9607 3.82895 21.0659 2.93414C20.1711 2.03933 19.031 1.63399 17.5863 1.43975C16.1748 1.24998 14.3658 1.24999 12.0574 1.25ZM3.9948 3.9948C4.56445 3.42514 5.33517 3.09825 6.61358 2.92637C7.91356 2.75159 9.62177 2.75 12 2.75C14.3782 2.75 16.0864 2.75159 17.3864 2.92637C18.6648 3.09825 19.4355 3.42514 20.0052 3.9948C20.5749 4.56445 20.9018 5.33517 21.0736 6.61358C21.2484 7.91356 21.25 9.62177 21.25 12C21.25 14.3782 21.2484 16.0864 21.0736 17.3864C20.9018 18.6648 20.5749 19.4355 20.0052 20.0052C19.4355 20.5749 18.6648 20.9018 17.3864 21.0736C16.0864 21.2484 14.3782 21.25 12 21.25C9.62177 21.25 7.91356 21.2484 6.61358 21.0736C5.33517 20.9018 4.56445 20.5749 3.9948 20.0052C3.42514 19.4355 3.09825 18.6648 2.92637 17.3864C2.75159 16.0864 2.75 14.3782 2.75 12C2.75 9.62177 2.75159 7.91356 2.92637 6.61358C3.09825 5.33517 3.42514 4.56445 3.9948 3.9948Z" fill="#1C274C"></path> </g></svg></div>
+                <div class="title-modal">Confirmación de asistencia</div>
+                <div class="subtitle-modal">Complete el formulario con sus datos</div>
+                <form action="">
+                    <div class="inputs-radio">
+                        <label>
+                            <input type="radio" required name="attendance" value="true">
+                            Asistiré
+                        </label>
+                        <label>
+                            <input type="radio" name="attendance" value="false">
+                            No asistiré
+                        </label>
+                    </div>
+                    <div class="container-nombre">
+                        <label for="">
+                            <p>Nombre y apellido:</p>
+                            <input type="text" required name="name_confirmation" id="name_confirmation">
+                        </label>
+                    </div>
+                    <div class="container-telefono">
+                        <label for="">
+                            <p>Teléfono:</p>
+                            <input type="number" name="phone_number_confirmation" id="phone_number_confirmation">
+                        </label>
+                    </div>
+                    <div class="container-button">
+                        <button onclick="sendData(event)">Confirmar</button>
+                    </div>
+                </form>
+                <div class="error"></div>
+                <div class="footer-modal">
+                    <a href="">invitafacil.com</a>
+                </div>
+            </div>
+        </div>`
+            document.body.style.overflow = "hidden";
+        }
+        
+        function closeModal() {
+            const modalOverflow = document.querySelector(".modal-overflow");
+            if (modalOverflow) {
+                modalOverflow.innerHTML = ""; // Elimina el contenido del modal
+                document.body.style.overflow = "";
+            }
+        }
     </script>
 </body>
 </html>
