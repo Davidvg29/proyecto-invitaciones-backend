@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+    <title>Casamiento</title>
+    <style>
+        :root {
+    --color-primario: #F9F5EF;
+    --color-secundario: #DDC190;
+    --color-terciario: #868686;
+
+    --fuente-primaria: "Ephesis", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    background-color: var(--color-primario);
+    user-select: none;
+    padding-top: 30px; /* Asegura que el contenido no se solape con el header */
+}
+
+header {
+    background-color: var(--color-primario);
+    width: 100%;
+    height: auto;
+    min-width: 60px;
+    padding: 5px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: var(--color-secundario);
+    font-family: var(--fuente-primaria);
+    font-size: 40px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-img {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.div-img {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.div-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+}
+
+/* Degradado en la parte inferior de la imagen */
+.div-img::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    border-radius: 5px;
+}
+
+.div-text {
+    position: absolute;
+    width: 100%;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+}
+
+.text1 {
+    font-size: 40px;
+}
+
+.text2 {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.container-contador{
+    /* background-color: red; */
+    text-align: center;
+    margin: 130px 0 130px 0;
+}
+.cuando{
+    font-size: 14px;
+    color: var(--color-secundario);
+    margin: 10px;
+}
+.fecha{
+    font-size: 30px;
+    color: var(--color-terciario);
+    margin: 10px;
+}
+.contador{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.item{
+    margin: 10px;
+}
+.separador{
+    font-size: 18px;
+    color: var(--color-secundario);
+}
+.numero{
+    color: var(--color-secundario);
+    font-size: 30px;
+}
+.tiempo{
+    font-size: 12px;
+    color: var(--color-terciario);
+}
+
+.container-direcciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-terciario);
+    /* background-color: red; */
+     /* border-top: 1px solid var(--color-terciario); */
+    width: 100%;
+    padding: 0px 0 100px 0;
+}
+.container-direcciones svg{
+    width: 45px;
+    height: 45px;
+}
+.direccion{
+    margin: 40px;
+}
+.title-direccion{
+    font-size: 30px;
+    margin: 10px;
+}
+.direccion-horario{
+    font-size: 25px;
+    margin: 10px;
+    margin-bottom: 25px;
+}
+.container-direcciones a{
+    background-color: #eaeaea;
+    padding: 10px 20px 10px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: var(--color-terciario);
+    font-size: 14px;
+}
+.container-historia{
+    /* background-color: red; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 100px 0;
+}
+.historia-img{
+    /* background-color: green; */
+    /* width: 100%; */
+    /* height: 50%; */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.historia-img img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    padding: 10px;
+}
+.historia{
+    /* background-color: rgb(0, 9, 128); */
+    /* width: 100%; */
+    /* height: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.historia svg{
+    width: 60px;
+    height: 60px;
+    /* margin: 10px; */
+     margin: 20px;
+}
+.historia-title{
+    font-size: 30px;
+    margin: 20px 0 20px 0;
+    font-family: var(--fuente-primaria);
+    color: var(--color-terciario);
+}
+.historia-texto{
+    max-width: 500px;
+    line-height: 1.5;
+    color: var(--color-terciario);
+}
+
+.container-album{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.title-album{
+    font-size: 14px;
+    color: var(--color-secundario);
+}
+.subtitle-album{
+    font-size: 30px;
+    color: var(--color-terciario);
+}
+.container-img-album{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px 0 30px 0;
+    overflow: hidden;
+}
+.container-img-album img{
+    width: 40%;
+    height: 70vw;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+footer{
+    background-color: rgb(40, 40, 40);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer a{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.container-confirmar{
+    background-color: var(--color-secundario);
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.container-confirmar svg{
+    width: 70px;
+    height: 70px;
+}
+.title-confirmar{
+    font-size: 30px;
+    color: var(--color-primario);
+    margin: 20px;
+}
+.subtitle-confirmar{
+    color: var(--color-primario);
+}
+.container-confirmar button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    margin: 20px;
+    border-radius: 100px;
+    background-color: white;
+    color: var(--color-terciario);
+    border: none;
+}
+.container-confirmar button:hover{
+    cursor: pointer;
+}
+.container-confirmar button svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.sonido{
+    background-color: var(--color-secundario);
+    /* width: 100px; */
+    /* height: 100px; */
+     padding: 10px;
+     border-radius: 100px;
+     border: 3px solid var(--color-primario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+}
+.sonido:hover{
+    cursor: pointer;
+}
+.sonido svg{
+    width: 30px;
+    height: 30px;
+}
+/* .sonido::before, 
+.sonido::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    animation: sonar 1.5s infinite ease-out;
+}
+
+.sonido::after {
+    animation-delay: 0.5s;
+} */
+
+/* @keyframes sonar {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+} */
+
+/* modal */
+.container-modal {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(135, 135, 135, 0.208); */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    /* backdrop-filter: blur(5px); */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     opacity: 1;
+}
+.container-modal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(135, 135, 135, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+.modal{ 
+    background-color: white;
+    color: var(--color-secundario);
+    width: 90%;
+    max-width: 800px;
+    /* height: 300px; */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    /* animation: fadeIn 0.5s forwards; */
+}
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px); /* Empuja el modal hacia arriba */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Vuelve a su posición original */
+    }
+  }
+form{ 
+    background-color: white;
+    color: var(--color-terciario);
+    width: 90%;
+    max-width: 800px;
+    /* height: 300px; */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.close{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.close svg{
+    width: 30px;
+}
+.close svg:hover{
+    cursor: pointer;
+}
+.title-modal{
+    font-size: 25px;
+}
+.subtitle-modal{
+    font-size: 16px;
+    margin: 10px;
+}
+.inputs-radio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputs-radio label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 20px 20px ;
+}
+.inputs-radio input{
+    margin-right: 5px;
+}
+.container-nombre, .container-telefono {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container-nombre label, .container-telefono label{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 10px 0;
+    text-align: start;
+}
+.container-nombre input, .container-telefono input{
+    margin: 5px 0 5px 0;
+    border: 1px solid var(--color-terciario);
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.container-nombre p, .container-telefono p{
+    width: 60%;
+    font-size: 15px;
+}
+/* Ocultar flechas en Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Ocultar flechas en Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.container-button{
+    width: 100%;
+    margin: 20px;
+}
+.container-button button{
+    background-color: var(--color-secundario);
+    color: white;
+    width: 60%;
+    font-size: 15px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+.container-button button:hover{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    cursor: pointer;
+}
+.footer-modal{
+    /* background-color: rgb(40, 40, 40); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.footer-modal a{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+    font-size: 12px;
+}
+.error{
+    color: rgb(246, 97, 97);
+    /* background-color: green; */
+}
+/* fin modal */
+
+.container-loader{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--color-primario);
+    top: 0;
+    right: 0;
+    z-index: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--color-secundario);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+@media (min-width: 768px) {
+    header {
+        font-size: 50px;
+        padding: 10px;
+    }
+
+    .text1 {
+        font-size: 70px;
+    }
+
+    .text2 {
+        font-size: 18px;
+    }
+    .cuando{
+        font-size: 16px;
+    }
+    .fecha{
+        font-size: 40px;
+    }
+    .numero{
+        color: var(--color-secundario);
+        font-size: 50px;
+    }
+    .tiempo{
+        font-size: 12px;
+        color: var(--color-terciario);
+    }
+    .item{
+        margin: 30px;
+    }
+    .container-direcciones{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .container-direcciones svg{
+        width: 70px;
+        height: 70px;
+    }
+    .direccion{
+        margin:40px 100px 40px 100px;
+    }
+    .title-direccion{
+        font-size: 40px;
+        /* margin: 10px; */
+    }
+    .direccion-horario{
+        font-size: 30px;
+        /* margin: 10px; */
+    }
+
+    .container-historia{
+        flex-direction: row;
+    }
+    .historia-img img{
+        width: 90%;
+        max-width: 600px;
+        height: 90%;
+        max-height: 600px;
+        object-fit: cover;
+        padding: 10px;
+    }
+    .historia svg{
+        width: 70px;
+        height: 70px;
+    }
+    .historia-title{
+        font-size: 40px;
+    }
+    .container-img-album img{
+        width: 23%;
+        height: 30vw;
+        object-fit: cover;
+        margin: 5px;
+        border-radius: 5px;
+    }
+    .subtitle-album{
+        font-size: 40px;
+    }
+    .title-confirmar{
+        font-size: 40px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        Daniela y Adriano
+    </header>
+    <div class="container-img">
+        <div class="div-img">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/f0tpdvjuaro02aikiuf2" alt="">
+        </div>
+        <div class="div-text">
+            <p class="text1">¡Nos Casamos!</p>
+            <p class="text2">y queremos compartirlo contigo.</p>
+        </div>
+    </div>
+    <div class="container-contador">
+        <p class="cuando">¿CUANDO?</p>
+        <p class="fecha">29 de Diciembre</p>
+        <div class="contador">
+            <div class="item">
+                <p class="numero">120</p>
+                <p class="tiempo">DÍAS</p>
+            </div>
+            <p class="separador">:</p>
+            <div class="item">
+                <p class="numero">120</p>
+                <p class="tiempo">HS</p>
+            </div>
+            <p class="separador">:</p>
+            <div class="item">
+                <p class="numero">20</p>
+                <p class="tiempo">MIN</p>
+            </div>
+            <p class="separador">:</p>
+            <div class="item">
+                <p class="numero">20</p>
+                <p class="tiempo">SEG</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-direcciones">
+        <div class="direccion">
+            <svg fill="#DDC190" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M296.166,36.634c-3.337-3.337-8.73-3.337-12.066,0s-3.337,8.73,0,12.066l25.6,25.6c1.664,1.664,3.849,2.5,6.033,2.5 c2.185,0,4.369-0.836,6.033-2.5c3.337-3.337,3.337-8.73,0-12.066L296.166,36.634z"></path> <path d="M356.727,155.375c-1.34-10.069-3.439-20.002-6.468-29.687c-1.399-4.497-6.204-6.972-10.692-5.598 c-4.497,1.408-6.997,6.195-5.598,10.692c4.89,15.616,7.364,31.906,7.364,48.418c0,71.228-45.611,133.402-113.502,154.718 c-4.497,1.408-6.997,6.195-5.581,10.701c1.143,3.644,4.506,5.973,8.141,5.973c0.845,0,1.707-0.128,2.56-0.392 c66.014-20.727,112.93-76.416,123.273-143.113C416.35,217.66,460.8,270.268,460.8,332.8c0,70.579-57.421,128-128,128 s-128-57.421-128-128c0-60.365,41.916-112.179,99.209-124.996c-9.139,40.312-37.316,74.138-76.894,90.129 c-4.369,1.766-6.485,6.733-4.719,11.102c1.34,3.328,4.54,5.342,7.919,5.342c1.058,0,2.142-0.205,3.191-0.623 c55.134-22.272,90.76-75.085,90.76-134.554c0-18.867-3.567-37.222-10.624-54.562c-1.775-4.361-6.75-6.477-11.11-4.693 c-4.369,1.775-6.468,6.75-4.693,11.119c3.285,8.073,5.649,16.418,7.211,24.934C218.146,169.079,153.6,243.49,153.6,332.8 c0,98.816,80.384,179.2,179.2,179.2S512,431.616,512,332.8C512,242.227,445.679,167.202,356.727,155.375z M332.8,494.933 c-89.404,0-162.133-72.73-162.133-162.133c0-80.555,58.018-147.721,136.235-159.838c0.102,2.082,0.299,4.139,0.299,6.238 c0,3.635-0.188,7.236-0.486,10.812c-68.25,12.015-118.98,72.175-118.98,142.788c0,79.992,65.075,145.067,145.067,145.067 S477.867,412.792,477.867,332.8c0-71.287-51.038-131.191-119.902-142.711c0.213-3.61,0.435-7.228,0.435-10.889 c0-2.142-0.171-4.258-0.239-6.391c78.601,12.254,136.772,79.3,136.772,159.991C494.933,422.204,422.204,494.933,332.8,494.933z"></path> <path d="M130.56,333.909C62.677,312.602,17.067,250.428,17.067,179.2c0-89.404,72.73-162.133,162.133-162.133 c16.606,0,32.981,2.5,48.657,7.424c4.471,1.417,9.284-1.084,10.701-5.581c1.417-4.497-1.084-9.293-5.581-10.701 C215.637,2.765,197.547,0,179.2,0C80.384,0,0,80.384,0,179.2c0,78.729,50.415,147.439,125.457,171 c0.845,0.264,1.707,0.392,2.551,0.392c3.635,0,6.997-2.338,8.141-5.982C137.566,340.113,135.066,335.326,130.56,333.909z"></path> <path d="M179.2,51.2c16.64,0,32.819,3.14,48.094,9.344c4.361,1.766,9.344-0.333,11.119-4.702 c1.766-4.369-0.333-9.344-4.702-11.119c-17.323-7.023-35.669-10.59-54.511-10.59c-79.991,0-145.067,65.075-145.067,145.067 c0,59.375,35.541,112.162,90.556,134.477c1.05,0.427,2.142,0.631,3.208,0.631c3.371,0,6.562-2.014,7.91-5.325 c1.775-4.369-0.333-9.344-4.702-11.119C82.569,278.17,51.2,231.586,51.2,179.2C51.2,108.621,108.621,51.2,179.2,51.2z"></path> <path d="M264.533,102.4h85.333c4.71,0,8.533-3.823,8.533-8.533V59.733c0-2.261-0.905-4.429-2.5-6.033L304.7,2.5 c-1.604-1.596-3.772-2.5-6.033-2.5h-34.133C259.823,0,256,3.823,256,8.533v85.333C256,98.577,259.823,102.4,264.533,102.4z M273.067,17.067h22.067l46.2,46.199v22.067h-68.267V17.067z"></path> </g> </g> </g> </g></svg>
+            <p class="title-direccion">Civil</p>
+            <b>Registro del Estado Civil</b>
+            <p>Batalla de Ayacucho 357</p>
+            <p class="direccion-horario">19:00 hs</p>
+            <a href="">CÓMO LLEGAR</a>
+        </div>
+        <div class="direccion">
+            <svg fill="#DDC190" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M255.999,159.813c-17.926,0-32.509,14.583-32.509,32.508v47.167h65.017v-47.167 C288.508,174.396,273.925,159.813,255.999,159.813z M273.071,224.05h-34.143v-31.73c0-9.413,7.658-17.07,17.071-17.07 c9.414,0,17.071,7.658,17.071,17.07V224.05z"></path> </g> </g> <g> <g> <path d="M104.103,321.618c-17.926,0-32.509,14.583-32.509,32.509v47.167h65.017v-47.167 C136.611,336.202,122.028,321.618,104.103,321.618z M121.174,385.857H87.031v-31.73c0-9.413,7.658-17.071,17.071-17.071 c9.414,0,17.071,7.658,17.071,17.071V385.857z"></path> </g> </g> <g> <g> <path d="M407.896,321.618c-17.926,0-32.509,14.583-32.509,32.509v47.167h65.017v-47.167 C440.405,336.202,425.822,321.618,407.896,321.618z M424.968,385.857h-34.143v-31.73c0-9.413,7.658-17.071,17.071-17.071 s17.071,7.658,17.071,17.071V385.857z"></path> </g> </g> <g> <g> <path d="M475.69,474.641V281.799l-120.15-44.145v-77.605l-91.822-90.213v-31.24h20.579V23.159h-20.579V0h-15.437v23.159h-20.579 v15.437h20.579v31.239l-91.822,90.213v77.605l-120.15,44.146v192.842H16.225V512h479.55v-37.359H475.69z M355.54,254.1 l104.713,38.473v11.065L355.54,265.166V254.1z M355.54,281.612l104.713,38.473v154.556H355.54V281.612z M171.896,166.524 l84.104-82.63l84.104,82.63v13.663l-84.104-82.63l-84.104,82.63V166.524z M255.999,321.618c-36.818,0-66.771,29.953-66.771,66.77 v86.253h-17.333V231.982v-30.155l84.104-82.629l84.104,82.629v30.155v242.659H322.77v-86.253 C322.77,351.572,292.817,321.618,255.999,321.618z M307.333,388.389v86.253h-43.615V337.637 C288.374,341.372,307.333,362.707,307.333,388.389z M248.281,337.636v137.005h-43.615v-86.253 C204.666,362.706,223.625,341.371,248.281,337.636z M51.746,292.573l104.713-38.474v11.065L51.746,303.638V292.573z M51.746,320.085l104.713-38.473v193.03H51.746V320.085z M480.339,496.563h-0.002H31.662v-6.485h4.648h120.15h15.437h17.333 h133.542h17.333h15.437h120.15h4.648V496.563z"></path> </g> </g> <g> <g> <rect x="183.692" y="291.104" width="14.939" height="15.437"></rect> </g> </g> <g> <g> <rect x="216.11" y="291.104" width="14.938" height="15.437"></rect> </g> </g> <g> <g> <rect x="248.528" y="291.104" width="14.939" height="15.437"></rect> </g> </g> <g> <g> <rect x="280.946" y="291.104" width="14.938" height="15.437"></rect> </g> </g> <g> <g> <rect x="313.374" y="291.104" width="14.939" height="15.437"></rect> </g> </g> </g></svg>
+            <p class="title-direccion">Ceremonia</p>
+            <b>Iglesia de la Merced</b>
+            <p>Batalla de Ayacucho 357</p>
+            <p class="direccion-horario">19:00 hs</p>
+            <a href="">CÓMO LLEGAR</a>
+        </div>
+        <div class="direccion">
+            <svg fill="#DDC190" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.005 512.005" xml:space="preserve" stroke="#DDC190"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M286.168,89.3c2.185,0,4.369-0.836,6.033-2.5l24.141-24.141c3.328-3.337,3.328-8.738,0-12.066 c-3.337-3.336-8.738-3.336-12.075,0l-24.132,24.141c-3.328,3.337-3.328,8.738,0,12.066C281.808,88.464,283.984,89.3,286.168,89.3 z"></path> <path d="M219.804,86.8c1.664,1.664,3.849,2.5,6.033,2.5c2.185,0,4.369-0.836,6.033-2.5c3.337-3.337,3.337-8.738,0-12.066 L207.73,50.593c-3.337-3.328-8.73-3.328-12.066,0c-3.337,3.337-3.337,8.738,0,12.066L219.804,86.8z"></path> <path d="M511.713,450.678c-1.22-4.557-5.88-7.253-10.453-6.033l-38.383,10.283l-36.07-134.639 c20.599-7.544,37.76-21.888,48.862-41.122c12.493-21.641,14.319-49.451,5.427-82.662L449.863,79.939 c-0.58-2.185-2.014-4.045-3.977-5.18c-1.963-1.126-4.309-1.442-6.477-0.853l-163.2,43.733c-2.185,0.589-4.045,2.022-5.18,3.977 c-1.135,1.963-1.434,4.292-0.853,6.477l21.871,81.587c1.22,4.565,5.914,7.279,10.445,6.033c4.557-1.22,7.253-5.897,6.033-10.445 l-19.652-73.353l146.714-39.313l29.022,108.322c7.68,28.672,6.426,52.13-3.721,69.709 c-21.18,36.676-68.267,49.271-104.909,28.109c-15.855-9.148-27.836-26.052-35.669-50.312l119.774-32.102 c4.557-1.22,7.253-5.905,6.033-10.453c-1.22-4.548-5.897-7.245-10.445-6.033L307.45,234.204 c-2.185,0.589-4.053,2.022-5.188,3.977c-1.135,1.963-1.434,4.292-0.853,6.477c8.9,33.212,24.397,56.38,46.037,68.864 c14.464,8.354,30.515,12.621,46.78,12.621c5.35,0,10.709-0.64,16.06-1.57l36.113,134.767l-38.383,10.283 c-4.557,1.22-7.253,5.897-6.033,10.453c1.016,3.814,4.463,6.332,8.226,6.332c0.734,0,1.476-0.102,2.219-0.299l93.252-24.986 C510.228,459.911,512.933,455.226,511.713,450.678z"></path> <path d="M235.796,117.639l-163.2-43.733c-4.557-1.212-9.233,1.485-10.453,6.033L40.28,161.534 c-1.22,4.557,1.476,9.233,6.033,10.453c4.548,1.212,9.224-1.485,10.453-6.033l19.652-73.352l146.722,39.313l-29.03,108.322 c-7.689,28.672-20.497,48.358-38.084,58.505c-36.668,21.188-83.729,8.568-104.909-28.109 c-9.156-15.863-11.076-36.489-5.726-61.414l119.782,32.094c4.548,1.246,9.225-1.476,10.445-6.033 c1.22-4.548-1.476-9.225-6.033-10.445L41.364,190.471c-4.54-1.22-9.233,1.485-10.453,6.033 c-8.9,33.203-7.074,61.005,5.427,82.662c11.102,19.234,28.262,33.587,48.862,41.131l-36.07,134.622l-38.383-10.283 c-4.548-1.229-9.233,1.485-10.453,6.033c-1.22,4.548,1.485,9.233,6.033,10.453l93.252,24.986c0.742,0.196,1.485,0.299,2.21,0.299 c3.772,0,7.219-2.517,8.243-6.332c1.22-4.548-1.485-9.233-6.033-10.453l-38.383-10.283l36.105-134.758 c5.35,0.93,10.709,1.562,16.06,1.562c16.265,0,32.324-4.267,46.78-12.612c21.641-12.501,37.137-35.669,46.037-68.872 l31.232-116.574C243.049,123.536,240.353,118.859,235.796,117.639z"></path> <path d="M256.003,25.598c-4.71,0-8.533,3.823-8.533,8.533v34.133c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533V34.132 C264.536,29.421,260.713,25.598,256.003,25.598z"></path> </g> </g> </g> </g></svg>
+            <p class="title-direccion">Festejo</p>
+            <b>Salon Mi Favorito</b>
+            <p>Batalla de Ayacucho 357</p>
+            <p class="direccion-horario">19:00 hs</p>
+            <a href="">CÓMO LLEGAR</a>
+        </div>
+    </div>
+    <div class="container-historia">
+        <div class="historia-img">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/brs9pzje6qckcdce1kqm"" alt="">
+        </div>
+        <div class="historia">
+            <svg fill="#DDC190" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.001 512.001" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M507.174,206.474c0-36.88-14.012-71.461-39.456-97.371c-25.585-26.055-59.9-40.403-96.624-40.403 c-46.775,0-89.734,23.448-115.093,62.014c-25.36-38.567-68.319-62.014-115.094-62.014c-36.724,0-71.039,14.35-96.624,40.404 c-25.444,25.911-39.456,60.491-39.456,97.371c0,34.566,10.003,54.769,18.041,71.004l0.874,1.767 C57.023,346.667,243.1,501.32,251.004,507.871l4.983,4.13l4.994-4.118c0.186-0.154,17.737-14.637,42.731-36.317 c23.29,20.776,41.808,36.14,42.007,36.304l4.983,4.13l4.994-4.118c4.889-4.031,119.972-99.202,139.664-140.762l0.548-1.153 c4.754-10.001,11.265-23.696,11.265-44.529c0-18.076-5.289-35.186-15.314-49.802C498.594,257.196,507.174,236.372,507.174,206.474 z M481.765,359.243l-0.557,1.172c-16.029,33.83-107.926,112.274-130.482,131.218c-7.731-6.52-23.617-20.064-41.7-36.331 c-27.38-24.629-49.343-46.08-64.856-63.245c-4.309-4.768-8.121-9.206-11.412-13.289c-1.317-1.633-2.55-3.209-3.699-4.727 c-4.021-5.314-7.005-9.915-8.891-13.738l-0.326-0.659c-4.573-9.255-9.757-19.743-9.757-38.203 c0-40.114,30.894-71.536,70.333-71.536c26.665,0,50.945,14.681,63.364,38.312l6.932,13.189l6.932-13.189 c12.419-23.632,36.699-38.312,63.364-38.312c21.955,0,42.218,9.967,55.591,27.343c9.754,12.674,14.909,27.955,14.909,44.193 C491.513,338.738,486.335,349.632,481.765,359.243z M480.674,258.328c-0.033-0.032-0.07-0.063-0.103-0.096 c-0.864-0.837-1.748-1.651-2.644-2.447c-0.156-0.139-0.31-0.28-0.467-0.418c-0.899-0.788-1.813-1.555-2.74-2.302 c-0.184-0.147-0.367-0.293-0.552-0.44c-0.951-0.754-1.914-1.491-2.894-2.202c-0.086-0.063-0.173-0.121-0.26-0.184 c-0.949-0.683-1.912-1.343-2.886-1.984c-0.15-0.099-0.299-0.201-0.449-0.299c-0.999-0.649-2.013-1.274-3.038-1.879 c-0.201-0.119-0.404-0.237-0.607-0.355c-1.037-0.601-2.083-1.184-3.144-1.74c-0.126-0.067-0.256-0.129-0.382-0.195 c-1.027-0.532-2.065-1.043-3.113-1.532c-0.134-0.063-0.266-0.128-0.4-0.19c-1.087-0.501-2.187-0.974-3.296-1.428 c-0.216-0.089-0.433-0.177-0.65-0.264c-1.107-0.443-2.222-0.867-3.348-1.263c-0.163-0.057-0.328-0.111-0.492-0.168 c-1.1-0.38-2.209-0.739-3.327-1.075c-0.11-0.033-0.218-0.069-0.328-0.101c-1.16-0.342-2.331-0.656-3.509-0.949 c-0.228-0.056-0.454-0.114-0.682-0.169c-1.161-0.28-2.329-0.538-3.506-0.769c-0.198-0.039-0.398-0.074-0.597-0.112 c-1.177-0.223-2.36-0.427-3.55-0.601c-0.067-0.009-0.134-0.022-0.2-0.031c-1.223-0.176-2.453-0.319-3.688-0.444 c-0.233-0.023-0.466-0.048-0.698-0.07c-1.203-0.112-2.412-0.199-3.626-0.261c-0.223-0.011-0.447-0.019-0.67-0.028 c-1.266-0.054-2.537-0.091-3.814-0.091c-28.092,0-54.008,13.362-70.297,35.584c-16.288-22.221-42.205-35.584-70.297-35.584 c-4.359,0-8.664,0.319-12.888,0.948c-18.305,2.722-35.095,11.238-48.226,24.65c-16.044,16.387-24.88,38.263-24.88,61.599 c0,22.118,6.308,34.884,11.377,45.142l0.323,0.653c0.299,0.606,0.619,1.225,0.957,1.855c0.109,0.201,0.23,0.412,0.342,0.616 c0.239,0.435,0.477,0.869,0.735,1.316c0.147,0.255,0.308,0.519,0.461,0.778c0.241,0.408,0.479,0.814,0.735,1.232 c0.176,0.287,0.365,0.583,0.549,0.874c0.252,0.401,0.5,0.8,0.765,1.209c0.201,0.311,0.417,0.631,0.625,0.947 c0.266,0.403,0.531,0.805,0.811,1.216c0.222,0.328,0.457,0.663,0.687,0.996c0.285,0.411,0.569,0.823,0.867,1.242 c0.244,0.345,0.499,0.696,0.752,1.047c0.303,0.42,0.606,0.839,0.92,1.267c0.266,0.362,0.543,0.731,0.818,1.098 c0.321,0.428,0.641,0.857,0.973,1.293c0.287,0.378,0.584,0.76,0.88,1.143c0.338,0.438,0.679,0.876,1.027,1.321 c0.31,0.395,0.629,0.795,0.948,1.195c0.355,0.446,0.714,0.894,1.081,1.347c0.33,0.408,0.666,0.82,1.004,1.233 c0.376,0.458,0.756,0.92,1.142,1.385c0.35,0.422,0.705,0.846,1.064,1.274c0.396,0.471,0.798,0.946,1.204,1.424 c0.369,0.433,0.74,0.869,1.117,1.307c0.415,0.482,0.836,0.969,1.262,1.459c0.39,0.449,0.783,0.9,1.183,1.355 c0.432,0.493,0.874,0.991,1.317,1.49c0.409,0.461,0.82,0.923,1.238,1.391c0.453,0.505,0.916,1.017,1.379,1.53 c0.43,0.475,0.86,0.95,1.3,1.431c0.471,0.516,0.952,1.038,1.434,1.56c0.451,0.49,0.9,0.977,1.359,1.472 c0.489,0.526,0.99,1.06,1.489,1.592c0.473,0.505,0.943,1.008,1.425,1.519c0.505,0.535,1.023,1.077,1.538,1.618 c0.495,0.52,0.984,1.037,1.489,1.562c0.526,0.548,1.066,1.106,1.602,1.66c0.513,0.53,1.019,1.058,1.541,1.594 c0.553,0.569,1.123,1.148,1.687,1.724c0.522,0.533,1.037,1.061,1.568,1.6c0.595,0.603,1.207,1.217,1.814,1.828 c0.521,0.525,1.034,1.044,1.564,1.574c0.632,0.633,1.282,1.277,1.926,1.917c1.029,1.023,2.073,2.057,3.133,3.099 c0.657,0.647,1.307,1.288,1.975,1.943c0.596,0.583,1.21,1.177,1.815,1.766c0.636,0.618,1.264,1.232,1.91,1.856 c0.635,0.615,1.287,1.239,1.933,1.861c0.633,0.609,1.259,1.213,1.901,1.828c0.661,0.633,1.337,1.275,2.008,1.914 c0.649,0.619,1.295,1.234,1.953,1.858c0.671,0.636,1.356,1.281,2.037,1.924c0.678,0.639,1.352,1.276,2.039,1.921 c0.696,0.654,1.405,1.315,2.111,1.975c0.685,0.64,1.367,1.278,2.06,1.923c0.733,0.682,1.478,1.372,2.222,2.061 c0.689,0.639,1.378,1.277,2.077,1.921c0.751,0.692,1.512,1.392,2.273,2.091c0.714,0.657,1.429,1.313,2.153,1.975 c0.761,0.696,1.532,1.399,2.303,2.102c0.461,0.421,0.914,0.835,1.379,1.259c-16.322,14.139-29.276,25.044-35.971,30.638 C225.692,466.156,66.682,330.854,37.785,272.311l-0.882-1.783c-7.695-15.54-16.415-33.153-16.415-64.055 c0-68.475,52.894-122.114,120.419-122.114c45.518,0,86.963,25.059,108.162,65.396l6.932,13.19l6.932-13.19 c21.199-40.337,62.644-65.396,108.162-65.396c67.525,0,120.419,53.639,120.419,122.114 C491.513,228.979,486.168,245.516,480.674,258.328z"></path> </g> </g> <g> <g> <rect x="132.263" width="15.661" height="48.755"></rect> </g> </g> <g> <g> <rect x="180.238" y="31.801" transform="matrix(0.4198 -0.9076 0.9076 0.4198 82.7462 208.7054)" width="48.754" height="15.661"></rect> </g> </g> <g> <g> <rect x="67.737" y="15.249" transform="matrix(0.9076 -0.4198 0.4198 0.9076 -9.6539 35.3847)" width="15.661" height="48.754"></rect> </g> </g> <g> <g> <path d="M53.911,215.024c0-0.736,0.007-1.471,0.023-2.205l-15.658-0.325c-0.018,0.842-0.026,1.684-0.026,2.53 c0,10.501,1.068,20.071,3.266,29.256l15.231-3.645C54.838,232.659,53.911,224.281,53.911,215.024z"></path> </g> </g> <g> <g> <path d="M75.131,128.949c-18.758,17.633-31.327,41.469-35.395,67.119l15.468,2.453c3.526-22.237,14.412-42.892,30.653-58.16 L75.131,128.949z"></path> </g> </g> <g> <g> <path d="M260.454,266.837c-21.531,9.985-35.613,31.183-36.749,55.323l15.643,0.736c0.86-18.293,11.473-34.329,27.695-41.851 L260.454,266.837z"></path> </g> </g> </g></svg>
+            <p class="historia-title">Nuestra Historia</p>
+            <p class="historia-texto">Dicen que el destino tiene formas curiosas de unir a las personas. Como aquella vez, en un día cualquiera, donde una conversación sin pretensiones y una risa compartida marcaron el inicio de algo que ninguno imaginaba.
+                Al principio, todo fue ligero, como un juego entre miradas y momentos robados. Pero los días se convirtieron en meses, y los meses en años. Hubo viajes inesperados, noches de charlas interminables, abrazos en días difíciles y celebraciones en los felices. Sin darnos cuenta, lo que parecía pasajero se volvió eterno.
+                Porque algunas historias no necesitan grandes promesas ni planes perfectos. Solo necesitan dos personas dispuestas a elegir el mismo camino, una y otra vez.</p>
+        </div>
+    </div>
+    <div class="container-album">
+        <p class="title-album">ÁLBUM DE FOTOS</p>
+        <p class="subtitle-album">Momentos únicos</p>
+        <div class="container-img-album">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/f0tpdvjuaro02aikiuf2" alt="">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/brs9pzje6qckcdce1kqm" alt="">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/gfgl3z4sysfxuydvfppl" alt="">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/w09vm91enxeycclzoxgu" alt="">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/bcjq3fzeskkhb3w9q8gb" alt="">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/ezkuvwuhzmdmjqy8evja" alt="">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/ewgcaq1rtbn6mqqkrmlb" alt="">
+            <img src="https://res.cloudinary.com/djkld6wmk/image/upload/f_auto,q_auto/v1/proyecto%20invitaciones/bwiscv0kpqhgjkijqoe2" alt="">
+        </div>
+    </div>
+    <div class="container-confirmar">
+        <svg version="1.1" id="CHECKLIST" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1800 1800" enable-background="new 0 0 1800 1800" xml:space="preserve" fill="#F9F5EF"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path fill="#F9F5EF" d="M1506.693,279.092h-150.36v-85.277c0-17.353-14.065-31.418-31.419-31.418h-227.317 C1078.205,70.574,996.5,2.304,900.003,2.304c-96.499,0-178.202,68.27-197.595,160.092H475.091 c-17.353,0-31.419,14.065-31.419,31.418v85.277H293.307c-17.353,0-31.419,14.066-31.419,31.419v1455.764 c0,17.353,14.066,31.419,31.419,31.419h1213.386c17.354,0,31.42-14.066,31.42-31.419V310.511 C1538.113,293.158,1524.047,279.092,1506.693,279.092z M506.511,225.234h223.28c16.617,0,30.354-12.935,31.362-29.517 c4.436-73.219,65.424-130.574,138.85-130.574c73.425,0,134.413,57.355,138.849,130.574c1.009,16.582,14.746,29.517,31.363,29.517 h223.28v53.858v62.838v74.81H506.511v-74.81v-62.838V225.234z M1475.274,1734.855H324.728V341.93h118.944v106.229 c0,17.354,14.066,31.419,31.419,31.419h849.823c17.354,0,31.419-14.066,31.419-31.419V341.93h118.941V1734.855z"></path> <path fill="#F9F5EF" d="M663.633,684.019L534.366,813.291l-57.803-57.806c-12.272-12.265-32.164-12.265-44.437,0 c-12.269,12.272-12.269,32.164,0,44.437l80.021,80.022c6.136,6.132,14.176,9.201,22.219,9.201c8.043,0,16.083-3.069,22.219-9.201 l151.486-151.486c12.269-12.273,12.269-32.165,0-44.438C695.799,671.755,675.907,671.755,663.633,684.019z"></path> <path fill="#F9F5EF" d="M824.996,750.563c-17.354,0-31.419,14.066-31.419,31.419c0,17.354,14.066,31.419,31.419,31.419h520.665 c17.354,0,31.419-14.066,31.419-31.419c0-17.353-14.065-31.419-31.419-31.419H824.996z"></path> <path fill="#F9F5EF" d="M663.633,1039.925l-129.267,129.272l-57.803-57.807c-12.272-12.265-32.164-12.265-44.437,0 c-12.269,12.272-12.269,32.164,0,44.438l80.021,80.021c6.136,6.133,14.176,9.2,22.219,9.2c8.043,0,16.083-3.067,22.219-9.2 l151.486-151.486c12.269-12.272,12.269-32.163,0-44.438C695.799,1027.66,675.907,1027.66,663.633,1039.925z"></path> <path fill="#F9F5EF" d="M1345.661,1106.467H824.996c-17.354,0-31.419,14.066-31.419,31.42s14.066,31.42,31.419,31.42h520.665 c17.354,0,31.419-14.066,31.419-31.42S1363.015,1106.467,1345.661,1106.467z"></path> <path fill="#F9F5EF" d="M663.633,1395.83l-129.267,129.272l-57.803-57.808c-12.272-12.264-32.164-12.264-44.437,0 c-12.269,12.274-12.269,32.166,0,44.439l80.021,80.021c6.136,6.132,14.176,9.199,22.219,9.199c8.043,0,16.083-3.067,22.219-9.199 l151.486-151.486c12.269-12.274,12.269-32.166,0-44.438C695.799,1383.566,675.907,1383.566,663.633,1395.83z"></path> <path fill="#F9F5EF" d="M1345.661,1462.373H824.996c-17.354,0-31.419,14.066-31.419,31.42s14.066,31.418,31.419,31.418h520.665 c17.354,0,31.419-14.064,31.419-31.418S1363.015,1462.373,1345.661,1462.373z"></path> </g> </g></svg>
+        <p class="title-confirmar">Confirmacion de asistencia</p>
+        <p class="subtitle-confirmar">Esperamos contar con tu presencia, no olvides confirmar</p>
+        <button class="confirmar" onclick="openModal()">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#DDC190" stroke-width="1.5"></circle> <path d="M8.5 12.5L10.5 14.5L15.5 9.5" stroke="#DDC190" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            CONFIRMAR ASISTENCIA
+        </button>
+    </div>
+    <div class="sonido">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 3.00001C14 1.07799 11.5532 0.262376 10.4 1.8L6.5 7H4C2.34315 7 1 8.34315 1 10V14C1 15.6569 2.34315 17 4 17H6.49356L10.3878 22.3049C11.5313 23.8627 14 23.0539 14 21.1214V3.00001ZM8.1 8.2L12 3V21.1214L8.10581 15.8165C7.72901 15.3032 7.13031 15 6.49356 15H4C3.44772 15 3 14.5523 3 14V10C3 9.44772 3.44772 9 4 9H6.5C7.12951 9 7.72229 8.70361 8.1 8.2Z" fill="#FFFFFF"></path> <path d="M21.2929 8.57094C21.6834 8.18041 22.3166 8.18042 22.7071 8.57094C23.0976 8.96146 23.0976 9.59463 22.7071 9.98515L20.7603 11.9319L22.7071 13.8787C23.0976 14.2692 23.0976 14.9024 22.7071 15.2929C22.3166 15.6834 21.6834 15.6834 21.2929 15.2929L19.3461 13.3461L17.3994 15.2929C17.0088 15.6834 16.3757 15.6834 15.9852 15.2929C15.5946 14.9023 15.5946 14.2692 15.9852 13.8787L17.9319 11.9319L15.9852 9.98517C15.5946 9.59464 15.5946 8.96148 15.9852 8.57096C16.3757 8.18043 17.0088 8.18043 17.3994 8.57096L19.3461 10.5177L21.2929 8.57094Z" fill="#FFFFFF"></path> </g></svg>
+    </div>
+    
+    <footer>
+        <a href="">invitafacil.com.ar</a>
+    </footer>
+
+    <!-- modal -->
+    <div class="modal-overflow"></div>
+    <!-- fin modal -->
+
+    <!-- loader -->
+    <div class="loader-wrapper">
+        <div class="container-loader">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <!-- fin loader -->
+    <script>
+        function loader(){
+            setTimeout(() => {
+                document.querySelector(".loader-wrapper").innerHTML=""
+                // document.body.insertAdjacentHTML("beforeend", htmlContent);
+            }, 1500);
+        }
+        loader()
+
+        async function sendData(e){
+            e.preventDefault()
+            const error = document.querySelector(".error")
+            let errors = []
+            let data = {
+                id_invitation: "{{id_invitation}}", 
+                attendance: document.querySelector('input[name="attendance"]:checked')?.value  || "",
+                name_confirmation: document.querySelector("#name_confirmation")?.value || "", 
+                phone_number_confirmation: document.querySelector("#phone_number_confirmation")?.value || "", 
+            }
+            if (data.attendance === "true") {
+                data.attendance = true;
+            } else if (data.attendance === "false") {
+                data.attendance = false;
+            } else {
+                data.attendance = null; // Si no es "true" ni "false", asignamos null o podrías lanzar un error
+            }
+            
+            if(data.attendance === null) errors.push("Por favor, Indica si asistes o no.")
+            if(!data.name_confirmation || data.name_confirmation.length < 3) errors.push("Complete con un nombre válido.")
+            
+            if (errors.length > 0) {
+                error.innerHTML = errors.join("<br>");
+                return;
+            }else error.innerHTML = ""
+            
+            try {
+                console.log(data)
+                const response = await fetch("http://localhost:3001/confirmation", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+                const dataReponse = await response.json()
+                console.log(dataReponse)
+                if(dataReponse.validation){
+                    for (const key in dataReponse.validation) {
+                        if(dataReponse.validation.hasOwnProperty(key)){
+                            const errorMessage = dataReponse.validation[key]
+                            error.innerHTML += `${errorMessage}<br>`
+                        }
+                    }
+                }else{
+                    if(dataReponse.created) error.style.color = "var(--color-secundario)"
+                    error.innerHTML = dataReponse.message
+                }
+            } catch (error) {
+                error.innerHTML = `Ocurrió un error al enviar la confirmación. Inténtelo de nuevo.`
+            }
+        }
+        
+        function openModal(){
+            const modalOverflow = document.querySelector(".modal-overflow")
+            modalOverflow.innerHTML=`
+            <div class="container-modal">
+            <div class="modal">
+                <div class="close"><svg class="svgClose" onclick="closeModal()" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.0303 8.96967C9.73741 8.67678 9.26253 8.67678 8.96964 8.96967C8.67675 9.26256 8.67675 9.73744 8.96964 10.0303L10.9393 12L8.96966 13.9697C8.67677 14.2626 8.67677 14.7374 8.96966 15.0303C9.26255 15.3232 9.73743 15.3232 10.0303 15.0303L12 13.0607L13.9696 15.0303C14.2625 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2625 15.0303 13.9697L13.0606 12L15.0303 10.0303C15.3232 9.73746 15.3232 9.26258 15.0303 8.96969C14.7374 8.6768 14.2625 8.6768 13.9696 8.96969L12 10.9394L10.0303 8.96967Z" fill="#1C274C"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0574 1.25H11.9426C9.63424 1.24999 7.82519 1.24998 6.41371 1.43975C4.96897 1.63399 3.82895 2.03933 2.93414 2.93414C2.03933 3.82895 1.63399 4.96897 1.43975 6.41371C1.24998 7.82519 1.24999 9.63422 1.25 11.9426V12.0574C1.24999 14.3658 1.24998 16.1748 1.43975 17.5863C1.63399 19.031 2.03933 20.1711 2.93414 21.0659C3.82895 21.9607 4.96897 22.366 6.41371 22.5603C7.82519 22.75 9.63423 22.75 11.9426 22.75H12.0574C14.3658 22.75 16.1748 22.75 17.5863 22.5603C19.031 22.366 20.1711 21.9607 21.0659 21.0659C21.9607 20.1711 22.366 19.031 22.5603 17.5863C22.75 16.1748 22.75 14.3658 22.75 12.0574V11.9426C22.75 9.63423 22.75 7.82519 22.5603 6.41371C22.366 4.96897 21.9607 3.82895 21.0659 2.93414C20.1711 2.03933 19.031 1.63399 17.5863 1.43975C16.1748 1.24998 14.3658 1.24999 12.0574 1.25ZM3.9948 3.9948C4.56445 3.42514 5.33517 3.09825 6.61358 2.92637C7.91356 2.75159 9.62177 2.75 12 2.75C14.3782 2.75 16.0864 2.75159 17.3864 2.92637C18.6648 3.09825 19.4355 3.42514 20.0052 3.9948C20.5749 4.56445 20.9018 5.33517 21.0736 6.61358C21.2484 7.91356 21.25 9.62177 21.25 12C21.25 14.3782 21.2484 16.0864 21.0736 17.3864C20.9018 18.6648 20.5749 19.4355 20.0052 20.0052C19.4355 20.5749 18.6648 20.9018 17.3864 21.0736C16.0864 21.2484 14.3782 21.25 12 21.25C9.62177 21.25 7.91356 21.2484 6.61358 21.0736C5.33517 20.9018 4.56445 20.5749 3.9948 20.0052C3.42514 19.4355 3.09825 18.6648 2.92637 17.3864C2.75159 16.0864 2.75 14.3782 2.75 12C2.75 9.62177 2.75159 7.91356 2.92637 6.61358C3.09825 5.33517 3.42514 4.56445 3.9948 3.9948Z" fill="#1C274C"></path> </g></svg></div>
+                <div class="title-modal">Confirmación de asistencia</div>
+                <div class="subtitle-modal">Complete el formulario con sus datos</div>
+                <form action="">
+                    <div class="inputs-radio">
+                        <label>
+                            <input type="radio" required name="attendance" value="true">
+                            Asistiré
+                        </label>
+                        <label>
+                            <input type="radio" name="attendance" value="false">
+                            No asistiré
+                        </label>
+                    </div>
+                    <div class="container-nombre">
+                        <label for="">
+                            <p>Nombre y apellido:</p>
+                            <input type="text" required name="name_confirmation" id="name_confirmation">
+                        </label>
+                    </div>
+                    <div class="container-telefono">
+                        <label for="">
+                            <p>Teléfono:</p>
+                            <input type="number" name="phone_number_confirmation" id="phone_number_confirmation">
+                        </label>
+                    </div>
+                    <div class="container-button">
+                        <button onclick="sendData(event)">Confirmar</button>
+                    </div>
+                </form>
+                <div class="error"></div>
+                <div class="footer-modal">
+                    <a href="">invitafacil.com</a>
+                </div>
+            </div>
+        </div>`
+            document.body.style.overflow = "hidden";
+        }
+        
+        function closeModal() {
+            const modalOverflow = document.querySelector(".modal-overflow");
+            if (modalOverflow) {
+                modalOverflow.innerHTML = ""; // Elimina el contenido del modal
+                document.body.style.overflow = "";
+            }
+        }
+    </script>
+</body>
+</html>
