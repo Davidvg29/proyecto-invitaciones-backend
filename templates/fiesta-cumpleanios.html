@@ -142,7 +142,21 @@ html, body {
 .direccion{
     font-size: 20px;
     font-weight: 600;
-    margin: 10px 0 10px 0;
+    margin: 10px 40px 10px 40px;
+}
+.info-1 a{
+    color: var(--color-primario);
+    text-decoration: none;
+    font-size: 12px;
+    /* background-color: var(--color-primario); */
+    color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 }
 .descripcion{
     font-size: 20px;
@@ -492,6 +506,9 @@ input[type="number"] {
     .info{
         width: 100%;
     }
+    .direccion{
+        margin: 10px 0px 10px 0px;
+    }
     .te-espero{
         font-size: 50px;
         padding-left: 0;
@@ -528,6 +545,7 @@ input[type="number"] {
     }
     .direccion{
         font-size: 15px;
+        margin: 10px 0px 10px 0px;
     }
     .descripcion{
         font-size: 15px;
@@ -586,7 +604,8 @@ input[type="number"] {
             <div class="info">
                 <div class="info-1">
                     <div class="horario">22 HS</div>
-                    <div class="direccion">Calle cualquiera 123, cualquier lugar</div>
+                    <div class="direccion">Pacará Center, Pcia de Córdoba 417, San Miguel de Tucumán.</div>
+                    <a href="https://maps.app.goo.gl/iwn3iBzZDteKehVLA" target="_blank">Cómo llegar</a>
                     <div class="descripcion">HABRÁ DJ Y TRAGOS</div>
                     <div class="container-confirmar">
                         <button class="confirmar" onclick="openModal()">Confirmar presencia</button>

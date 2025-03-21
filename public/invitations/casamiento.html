@@ -160,6 +160,13 @@ header {
 }
 .direccion{
     margin: 40px;
+    width: 300px;
+    height: 350px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .title-direccion{
     font-size: 30px;
@@ -614,7 +621,7 @@ input[type="number"] {
         height: 70px;
     }
     .direccion{
-        margin:40px 100px 40px 100px;
+        /* margin:40px 100px 40px 100px; */
     }
     .title-direccion{
         font-size: 40px;
@@ -678,22 +685,22 @@ input[type="number"] {
         <p class="fecha">29 de Diciembre</p>
         <div class="contador">
             <div class="item">
-                <p class="numero">120</p>
+                <p class="numero dias">120</p>
                 <p class="tiempo">DÍAS</p>
             </div>
             <p class="separador">:</p>
             <div class="item">
-                <p class="numero">120</p>
+                <p class="numero horas">120</p>
                 <p class="tiempo">HS</p>
             </div>
             <p class="separador">:</p>
             <div class="item">
-                <p class="numero">20</p>
+                <p class="numero minutos">20</p>
                 <p class="tiempo">MIN</p>
             </div>
             <p class="separador">:</p>
             <div class="item">
-                <p class="numero">20</p>
+                <p class="numero segundos"></p>
                 <p class="tiempo">SEG</p>
             </div>
         </div>
@@ -705,23 +712,23 @@ input[type="number"] {
             <b>Registro del Estado Civil</b>
             <p>Batalla de Ayacucho 357</p>
             <p class="direccion-horario">19:00 hs</p>
-            <a href="">CÓMO LLEGAR</a>
+            <a href="https://www.google.com.ar/maps/place/Registro+del+Estado+Civil+y+Capacidad+de+las+Personas+de+la+Provincia+de+Tucum%C3%A1n/@-26.8347802,-65.2208971,15z/data=!4m6!3m5!1s0x94225b8d29bad7a3:0x2d51bc438b530b83!8m2!3d-26.8347809!4d-65.2105974!16s%2Fg%2F11cr_s6266?entry=ttu&g_ep=EgoyMDI1MDMxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">CÓMO LLEGAR</a>
         </div>
         <div class="direccion">
             <svg fill="#DDC190" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M255.999,159.813c-17.926,0-32.509,14.583-32.509,32.508v47.167h65.017v-47.167 C288.508,174.396,273.925,159.813,255.999,159.813z M273.071,224.05h-34.143v-31.73c0-9.413,7.658-17.07,17.071-17.07 c9.414,0,17.071,7.658,17.071,17.07V224.05z"></path> </g> </g> <g> <g> <path d="M104.103,321.618c-17.926,0-32.509,14.583-32.509,32.509v47.167h65.017v-47.167 C136.611,336.202,122.028,321.618,104.103,321.618z M121.174,385.857H87.031v-31.73c0-9.413,7.658-17.071,17.071-17.071 c9.414,0,17.071,7.658,17.071,17.071V385.857z"></path> </g> </g> <g> <g> <path d="M407.896,321.618c-17.926,0-32.509,14.583-32.509,32.509v47.167h65.017v-47.167 C440.405,336.202,425.822,321.618,407.896,321.618z M424.968,385.857h-34.143v-31.73c0-9.413,7.658-17.071,17.071-17.071 s17.071,7.658,17.071,17.071V385.857z"></path> </g> </g> <g> <g> <path d="M475.69,474.641V281.799l-120.15-44.145v-77.605l-91.822-90.213v-31.24h20.579V23.159h-20.579V0h-15.437v23.159h-20.579 v15.437h20.579v31.239l-91.822,90.213v77.605l-120.15,44.146v192.842H16.225V512h479.55v-37.359H475.69z M355.54,254.1 l104.713,38.473v11.065L355.54,265.166V254.1z M355.54,281.612l104.713,38.473v154.556H355.54V281.612z M171.896,166.524 l84.104-82.63l84.104,82.63v13.663l-84.104-82.63l-84.104,82.63V166.524z M255.999,321.618c-36.818,0-66.771,29.953-66.771,66.77 v86.253h-17.333V231.982v-30.155l84.104-82.629l84.104,82.629v30.155v242.659H322.77v-86.253 C322.77,351.572,292.817,321.618,255.999,321.618z M307.333,388.389v86.253h-43.615V337.637 C288.374,341.372,307.333,362.707,307.333,388.389z M248.281,337.636v137.005h-43.615v-86.253 C204.666,362.706,223.625,341.371,248.281,337.636z M51.746,292.573l104.713-38.474v11.065L51.746,303.638V292.573z M51.746,320.085l104.713-38.473v193.03H51.746V320.085z M480.339,496.563h-0.002H31.662v-6.485h4.648h120.15h15.437h17.333 h133.542h17.333h15.437h120.15h4.648V496.563z"></path> </g> </g> <g> <g> <rect x="183.692" y="291.104" width="14.939" height="15.437"></rect> </g> </g> <g> <g> <rect x="216.11" y="291.104" width="14.938" height="15.437"></rect> </g> </g> <g> <g> <rect x="248.528" y="291.104" width="14.939" height="15.437"></rect> </g> </g> <g> <g> <rect x="280.946" y="291.104" width="14.938" height="15.437"></rect> </g> </g> <g> <g> <rect x="313.374" y="291.104" width="14.939" height="15.437"></rect> </g> </g> </g></svg>
             <p class="title-direccion">Ceremonia</p>
-            <b>Iglesia de la Merced</b>
-            <p>Batalla de Ayacucho 357</p>
+            <b>Basílica Menor Nuestra Señora de la Merced</b>
+            <p>Av. 24 de Septiembre 253</p>
             <p class="direccion-horario">19:00 hs</p>
-            <a href="">CÓMO LLEGAR</a>
+            <a href="https://www.google.com.ar/maps/place/Bas%C3%ADlica+Menor+Nuestra+Se%C3%B1ora+de+la+Merced/@-26.8314037,-65.2063514,17z/data=!4m6!3m5!1s0x94225c1ab0bd1d43:0x4824e2d900999b32!8m2!3d-26.8314037!4d-65.2015878!16s%2Fg%2F122_gb6t?entry=ttu&g_ep=EgoyMDI1MDMxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">CÓMO LLEGAR</a>
         </div>
         <div class="direccion">
             <svg fill="#DDC190" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.005 512.005" xml:space="preserve" stroke="#DDC190"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M286.168,89.3c2.185,0,4.369-0.836,6.033-2.5l24.141-24.141c3.328-3.337,3.328-8.738,0-12.066 c-3.337-3.336-8.738-3.336-12.075,0l-24.132,24.141c-3.328,3.337-3.328,8.738,0,12.066C281.808,88.464,283.984,89.3,286.168,89.3 z"></path> <path d="M219.804,86.8c1.664,1.664,3.849,2.5,6.033,2.5c2.185,0,4.369-0.836,6.033-2.5c3.337-3.337,3.337-8.738,0-12.066 L207.73,50.593c-3.337-3.328-8.73-3.328-12.066,0c-3.337,3.337-3.337,8.738,0,12.066L219.804,86.8z"></path> <path d="M511.713,450.678c-1.22-4.557-5.88-7.253-10.453-6.033l-38.383,10.283l-36.07-134.639 c20.599-7.544,37.76-21.888,48.862-41.122c12.493-21.641,14.319-49.451,5.427-82.662L449.863,79.939 c-0.58-2.185-2.014-4.045-3.977-5.18c-1.963-1.126-4.309-1.442-6.477-0.853l-163.2,43.733c-2.185,0.589-4.045,2.022-5.18,3.977 c-1.135,1.963-1.434,4.292-0.853,6.477l21.871,81.587c1.22,4.565,5.914,7.279,10.445,6.033c4.557-1.22,7.253-5.897,6.033-10.445 l-19.652-73.353l146.714-39.313l29.022,108.322c7.68,28.672,6.426,52.13-3.721,69.709 c-21.18,36.676-68.267,49.271-104.909,28.109c-15.855-9.148-27.836-26.052-35.669-50.312l119.774-32.102 c4.557-1.22,7.253-5.905,6.033-10.453c-1.22-4.548-5.897-7.245-10.445-6.033L307.45,234.204 c-2.185,0.589-4.053,2.022-5.188,3.977c-1.135,1.963-1.434,4.292-0.853,6.477c8.9,33.212,24.397,56.38,46.037,68.864 c14.464,8.354,30.515,12.621,46.78,12.621c5.35,0,10.709-0.64,16.06-1.57l36.113,134.767l-38.383,10.283 c-4.557,1.22-7.253,5.897-6.033,10.453c1.016,3.814,4.463,6.332,8.226,6.332c0.734,0,1.476-0.102,2.219-0.299l93.252-24.986 C510.228,459.911,512.933,455.226,511.713,450.678z"></path> <path d="M235.796,117.639l-163.2-43.733c-4.557-1.212-9.233,1.485-10.453,6.033L40.28,161.534 c-1.22,4.557,1.476,9.233,6.033,10.453c4.548,1.212,9.224-1.485,10.453-6.033l19.652-73.352l146.722,39.313l-29.03,108.322 c-7.689,28.672-20.497,48.358-38.084,58.505c-36.668,21.188-83.729,8.568-104.909-28.109 c-9.156-15.863-11.076-36.489-5.726-61.414l119.782,32.094c4.548,1.246,9.225-1.476,10.445-6.033 c1.22-4.548-1.476-9.225-6.033-10.445L41.364,190.471c-4.54-1.22-9.233,1.485-10.453,6.033 c-8.9,33.203-7.074,61.005,5.427,82.662c11.102,19.234,28.262,33.587,48.862,41.131l-36.07,134.622l-38.383-10.283 c-4.548-1.229-9.233,1.485-10.453,6.033c-1.22,4.548,1.485,9.233,6.033,10.453l93.252,24.986c0.742,0.196,1.485,0.299,2.21,0.299 c3.772,0,7.219-2.517,8.243-6.332c1.22-4.548-1.485-9.233-6.033-10.453l-38.383-10.283l36.105-134.758 c5.35,0.93,10.709,1.562,16.06,1.562c16.265,0,32.324-4.267,46.78-12.612c21.641-12.501,37.137-35.669,46.037-68.872 l31.232-116.574C243.049,123.536,240.353,118.859,235.796,117.639z"></path> <path d="M256.003,25.598c-4.71,0-8.533,3.823-8.533,8.533v34.133c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533V34.132 C264.536,29.421,260.713,25.598,256.003,25.598z"></path> </g> </g> </g> </g></svg>
             <p class="title-direccion">Festejo</p>
-            <b>Salon Mi Favorito</b>
-            <p>Batalla de Ayacucho 357</p>
+            <b>Pacará Center</b>
+            <p>Pcia de Córdoba 417</p>
             <p class="direccion-horario">19:00 hs</p>
-            <a href="">CÓMO LLEGAR</a>
+            <a href="https://www.google.com.ar/maps/place/Pacar%C3%A1+Center/@-26.8314033,-65.2140762,15z/data=!4m7!3m6!1s0x94225c1a05c16b71:0xb2144af1a00e80d0!8m2!3d-26.8271301!4d-65.2023738!15sCg1zYWxvbiBldmVudG9zkgEWZnVuY3Rpb25fcm9vbV9mYWNpbGl0eeABAA!16s%2Fg%2F11f2zmj9_b?entry=tts&g_ep=EgoyMDI1MDMxOC4wIPu8ASoASAFQAw%3D%3D" target="_blank">CÓMO LLEGAR</a>
         </div>
     </div>
     <div class="container-historia">
@@ -788,6 +795,32 @@ input[type="number"] {
     <!-- fin loader -->
     
     <script>
+        let intervalo;
+        function contadorFecha() {
+            const fechaObjetivo = new Date("2025-12-29T00:00:00").getTime();
+            const ahora = new Date().getTime();
+            const diferencia = fechaObjetivo - ahora;
+
+            if (diferencia <= 0) {
+                clearInterval(intervalo)
+                // console.log("¡Llegó la fecha!");
+                return;
+            }
+
+            const diasContador = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horasContador = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutosContador = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundosContador = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.querySelector(".dias").innerHTML = diasContador;
+            document.querySelector(".horas").innerHTML = horasContador;
+            document.querySelector(".minutos").innerHTML = minutosContador;
+            document.querySelector(".segundos").innerHTML = segundosContador;
+        }
+        contadorFecha()
+        intervalo = setInterval(contadorFecha, 1000);
+
+        
         let sound = false
         document.querySelector(".sonido").addEventListener("click", () => {
             let audio = document.querySelector("#musica")
