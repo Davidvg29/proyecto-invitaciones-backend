@@ -487,6 +487,7 @@ form{
 }
 .container-nombre label, .container-telefono label{
     width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -497,13 +498,15 @@ form{
 .container-nombre input, .container-telefono input{
     margin: 5px 0 5px 0;
     border: 1px solid var(--color-terciario);
-    width: 60%;
+    width: 100%;
+    max-width: 400px;
     height: 40px;
     border-radius: 5px;
     padding-left: 5px;
 }
 .container-nombre p, .container-telefono p{
-    width: 60%;
+    width: 100%;
+    max-width: 400px;
     font-size: 15px;
 }
 /* Ocultar flechas en Chrome, Safari, Edge */
@@ -525,7 +528,8 @@ input[type="number"] {
 .container-button button{
     background-color: var(--color-secundario);
     color: white;
-    width: 60%;
+    width: 100%;
+    max-width: 400px;
     font-size: 15px;
     height: 40px;
     border-radius: 5px;
@@ -663,6 +667,15 @@ input[type="number"] {
     .title-confirmar{
         font-size: 40px;
     }
+    /* .container-nombre input, .container-telefono input{
+        width: 60%;
+    }
+    .container-nombre p, .container-telefono p{
+        width: 60%;
+    }
+    .container-button button{
+        width: 60%;
+    } */
 }
 
     </style>
